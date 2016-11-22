@@ -1,0 +1,35 @@
+// font sizes
+$base-font-size: 1.6rem;
+
+// font stacks
+$font-stack: opensans, arial, sans-serif;
+$font-stack-alternate: calendas, arial, sans-serif;
+
+// colors scheme
+$color1: #333;
+$color2: #e3e3c1;
+$color3: #fff;
+$color4: #618b5f;
+$color5: #f5da8e;
+$color6: #BF463B;
+
+// colors used
+$base-color: $color1;
+$base-background: $color2;
+$base-color-alternate: $color3;
+$quote-background: $color4;
+$template-background: $color5;
+
+$footer-background: $color6;
+$button-background: $color6;
+
+// spacings
+$tiny-value: 0.5rem;
+$small-value: 1rem;
+$medium-value: 2rem;
+$large-value: 4rem;
+
+// Responsive breakpoints variables
+$tiny: 544px; // or 'em' if you prefer, of course
+$small: 768px;
+$medium: 1024px;

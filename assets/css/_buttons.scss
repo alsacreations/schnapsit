@@ -1,0 +1,48 @@
+@keyframes border {
+  38% {
+    transform: rotate(3deg) scale(1.05, 1.1);
+  }
+  50% {
+    transform: rotate(-5deg) scale(1.05, 1.1);
+  }
+  62% {
+    transform: rotate(3deg) scale(1.05, 1.1);
+  }
+}
+
+.button {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: .6em 1.4em;
+  background: $button-background;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+  }
+  
+  &:hover {
+    &::before {
+      border: 1px solid $base-color-alternate;
+      opacity: .5;
+      animation: border .25s;
+    }
+  }
+}
+
+.button--alternate {
+  margin-left: 1rem;
+  background: darken($button-background, 10%);
+}
+.button--download {
+  background: $color4;
+}

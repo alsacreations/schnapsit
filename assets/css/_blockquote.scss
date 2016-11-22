@@ -1,0 +1,75 @@
+/* blockquote */
+
+.schnapsum {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.schnapsum [type="radio"] {
+  display: none;
+}
+.schnapsum label ~ label {
+  margin-left: 1rem;
+}
+.quotes {
+  order: -1;
+  overflow: hidden;
+  white-space: nowrap;
+  
+  & > * {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+  }
+}
+
+.quote {
+  margin: 0 0 2rem;
+  font-family: $font-stack-alternate;
+  font-size: 2.1rem;
+  color: #fff;
+  transition: .25s transform cubic-bezier(.02,.62,.06,1.3);
+}
+
+[id="tab1"]:checked ~ .quotes > * {
+  transform: translateX(0)
+}
+[id="tab2"]:checked ~ .quotes > * {
+  transform: translateX(-100%)
+}
+
+[id^="tab"]:checked {
+  & + label {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+pre {
+  margin: 0;
+  tab-size: 2;
+  font-size: 1.8rem;
+  white-space: pre-wrap;
+}
+
+
+@media (min-width: ($small + 1)) {
+  .quote {
+    position: relative;
+    padding-left: 2.6em;
+    min-height: 2em;
+  }
+  .quote::before {
+    content: "\201C";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: georgia, serif;
+    font-size: 5em;
+    height: .4em;
+    line-height: .9;
+    color: rgba(0, 0, 0, .3);
+  }
+}

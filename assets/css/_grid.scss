@@ -1,0 +1,25 @@
+@mixin grid($number, $gutter) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gutter / 2;
+  margin-right: -$gutter / 2;
+
+  & > * {
+    box-sizing: border-box;
+    margin-left: $gutter / 2;
+  margin-right: $gutter / 2;
+    width: 100%;
+    min-width: 0;
+    @media (min-width: $tiny + 1) {
+      @if $number > 2 {
+        width: calc(100% / 2 - #{$gutter});
+      }
+      @else {
+        width: calc(100% / #{$number} - #{$gutter});
+      }
+    }
+    @media (min-width: $small + 1) {
+      width: calc(100% / #{$number} - #{$gutter});
+    }
+  }
+}
