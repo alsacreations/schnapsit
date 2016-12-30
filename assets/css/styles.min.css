@@ -279,6 +279,17 @@ footer {
   text-align: center;
 }
 
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
 .schnapsum {
   background-color: #618b5f;
 }
@@ -436,4 +447,418 @@ footer::after {
 .template-item span {
   display: block;
   font-size: .8em;
+}
+
+/*
+ *
+ * Mockup place
+ *
+ */
+#mockup-place {
+  font-size: 1.4rem;
+  /* right elements */
+}
+
+#mockup-place .row > *, #mockup-place .col {
+  display: table-cell;
+  vertical-align: top;
+}
+
+#mockup-place .edit {
+  cursor: pointer;
+  position: relative;
+}
+
+#mockup-place .left {
+  float: left;
+}
+
+#mockup-place .left.left {
+  margin-right: 1em;
+}
+
+#mockup-place .right {
+  float: right;
+}
+
+#mockup-place .right.right {
+  margin-left: 1em;
+}
+
+#mockup-place img.left, #mockup-place img.right {
+  margin-bottom: 5px;
+}
+
+#mockup-place .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#mockup-place .txtleft {
+  text-align: left;
+}
+
+#mockup-place .txtright {
+  text-align: right;
+}
+
+#mockup-place .txtcenter {
+  text-align: center;
+}
+
+#mockup-place .grey1 {
+  background-color: #CCCCCC;
+}
+
+#mockup-place .grey2 {
+  background-color: #AAAAAA;
+}
+
+#mockup-place .grey3 {
+  background-color: #BABABA;
+}
+
+#mockup-place .grey4 {
+  background-color: #ffffff;
+}
+
+#mockup-place .picked {
+  background-color: #EA3852;
+}
+
+#mockup-place .choice label {
+  margin: 0.4em 0.4em;
+  padding: 0.4em;
+  background-color: white;
+}
+
+#mockup-place .choice label:hover {
+  background-color: #EA3852;
+  color: white;
+}
+
+#mockup-place .reg {
+  color: white;
+}
+
+#mockup-place .reg:hover {
+  color: #EA3852;
+}
+
+#mockup-place .inbl {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#mockup-place header {
+  background: none;
+}
+
+#mockup-place footer:after {
+  content: none;
+}
+
+#mockup-place .w10 {
+  width: 10%;
+}
+
+#mockup-place .w20 {
+  width: 20%;
+}
+
+#mockup-place .w25 {
+  width: 25%;
+}
+
+#mockup-place .w30 {
+  width: 30%;
+}
+
+#mockup-place .w33 {
+  width: 33.3333%;
+}
+
+#mockup-place .w40 {
+  width: 40%;
+}
+
+#mockup-place .w50 {
+  width: 50%;
+}
+
+#mockup-place .w60 {
+  width: 60%;
+}
+
+#mockup-place .w66 {
+  width: 66.6666%;
+}
+
+#mockup-place .w70 {
+  width: 70%;
+}
+
+#mockup-place .w75 {
+  width: 75%;
+}
+
+#mockup-place .w80 {
+  width: 80%;
+}
+
+#mockup-place .w90 {
+  width: 90%;
+}
+
+#mockup-place .w100 {
+  width: 100%;
+}
+
+#mockup-place .w50p {
+  width: 50px;
+}
+
+#mockup-place .w100p {
+  width: 100px;
+}
+
+#mockup-place .w150p {
+  width: 150px;
+}
+
+#mockup-place .w200p {
+  width: 200px;
+}
+
+#mockup-place .w300p {
+  width: 300px;
+}
+
+#mockup-place .w400p {
+  width: 400px;
+}
+
+#mockup-place .w500p {
+  width: 500px;
+}
+
+#mockup-place .w600p {
+  width: 600px;
+}
+
+#mockup-place .w700p {
+  width: 700px;
+}
+
+#mockup-place .w800p {
+  width: 800px;
+}
+
+#mockup-place .w960p {
+  width: 960px;
+}
+
+#mockup-place .mw960p {
+  max-width: 960px;
+}
+
+#mockup-place .w1140p {
+  width: 1140px;
+}
+
+#mockup-place .mw1140p {
+  max-width: 1140px;
+}
+
+#mockup-place .m-reset, #mockup-place .ma0 {
+  margin: 0;
+}
+
+#mockup-place .p-reset, #mockup-place .pa0 {
+  padding: 0;
+}
+
+#mockup-place .ma1, #mockup-place .mas {
+  margin: 10px;
+}
+
+#mockup-place .ma2, #mockup-place .mam {
+  margin: 20px;
+}
+
+#mockup-place .ma3, #mockup-place .mal {
+  margin: 30px;
+}
+
+#mockup-place .pa1, #mockup-place .pas {
+  padding: 10px;
+}
+
+#mockup-place .pa2, #mockup-place .pam {
+  padding: 20px;
+}
+
+#mockup-place .pa3, #mockup-place .pal {
+  padding: 30px;
+}
+
+#mockup-place .mt0, #mockup-place .mtn {
+  margin-top: 0;
+}
+
+#mockup-place .mt1, #mockup-place .mts {
+  margin-top: 10px;
+}
+
+#mockup-place .mt2, #mockup-place .mtm {
+  margin-top: 20px;
+}
+
+#mockup-place .mt3, #mockup-place .mtl {
+  margin-top: 30px;
+}
+
+#mockup-place .mr0, #mockup-place .mrn {
+  margin-right: 0;
+}
+
+#mockup-place .mr1, #mockup-place .mrs {
+  margin-right: 10px;
+}
+
+#mockup-place .mr2, #mockup-place .mrm {
+  margin-right: 20px;
+}
+
+#mockup-place .mr3, #mockup-place .mrl {
+  margin-right: 30px;
+}
+
+#mockup-place .mb0, #mockup-place .mbn {
+  margin-bottom: 0;
+}
+
+#mockup-place .mb1, #mockup-place .mbs {
+  margin-bottom: 10px;
+}
+
+#mockup-place .mb2, #mockup-place .mbm {
+  margin-bottom: 20px;
+}
+
+#mockup-place .mb3, #mockup-place .mbl {
+  margin-bottom: 30px;
+}
+
+#mockup-place .ml0, #mockup-place .mln {
+  margin-left: 0;
+}
+
+#mockup-place .ml1, #mockup-place .mls {
+  margin-left: 10px;
+}
+
+#mockup-place .ml2, #mockup-place .mlm {
+  margin-left: 20px;
+}
+
+#mockup-place .ml3, #mockup-place .mll {
+  margin-left: 30px;
+}
+
+#mockup-place .pt0, #mockup-place .ptn {
+  padding-top: 0;
+}
+
+#mockup-place .pt1, #mockup-place .pts {
+  padding-top: 10px;
+}
+
+#mockup-place .pt2, #mockup-place .ptm {
+  padding-top: 20px;
+}
+
+#mockup-place .pt3, #mockup-place .ptl {
+  padding-top: 30px;
+}
+
+#mockup-place .pr0, #mockup-place .prn {
+  padding-right: 0;
+}
+
+#mockup-place .pr1, #mockup-place .prs {
+  padding-right: 10px;
+}
+
+#mockup-place .pr2, #mockup-place .prm {
+  padding-right: 20px;
+}
+
+#mockup-place .pr3, #mockup-place .prl {
+  padding-right: 30px;
+}
+
+#mockup-place .pb0, #mockup-place .pbn {
+  padding-bottom: 0;
+}
+
+#mockup-place .pb1, #mockup-place .pbs {
+  padding-bottom: 10px;
+}
+
+#mockup-place .pb2, #mockup-place .pbm {
+  padding-bottom: 20px;
+}
+
+#mockup-place .pb3, #mockup-place .pbl {
+  padding-bottom: 30px;
+}
+
+#mockup-place .pl0, #mockup-place .pln {
+  padding-left: 0;
+}
+
+#mockup-place .pl1, #mockup-place .pls {
+  padding-left: 10px;
+}
+
+#mockup-place .pl2, #mockup-place .plm {
+  padding-left: 20px;
+}
+
+#mockup-place .pl3, #mockup-place .pll {
+  padding-left: 30px;
+}
+
+#mockup-place footer {
+  clear: left;
+}
+
+.choice {
+  font-size: 0.85em;
+  padding: 10px;
+  background: rgba(155, 155, 155, 0.9);
+  position: absolute;
+  z-index: 2;
+  min-width: 200px;
+}
+
+.choice .quit {
+  font-family: 'icomoon';
+  cursor: pointer;
+  float: right;
+  margin: 0 0.4em;
+}
+
+.choice span {
+  color: white;
+  display: block;
+  margin: 10px 0;
+}
+
+.choice label {
+  margin: 0.4em 0.4em;
+  padding: 0.4em;
+  background-color: white;
+  color: #3a3a3a;
 }
