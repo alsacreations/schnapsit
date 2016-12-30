@@ -40,15 +40,15 @@
   </section>
 
   <form enctype="multipart/form-data" id="schnapsit">
-    
+
     <?php echo '<pre style="padding:10px">';
     print_r( $_POST );
     echo '</pre>'; ?>
 
     <section class="template">
-      
+
       <div class="autogrid">
-        
+
         <div class="autogrid-item">
           <label for="title">Titre</label>
           <input type="text" name="title" id="title" <?php if( isset( $_POST['title'] ) && empty( $_POST['title'] ) ) { echo 'value="' . htmlentities( $_POST['title'] ) . '"'; } else { echo 'value="J\'aime Schnaps.it"'; } ?> placeholder="J'aime Schnaps.it">
@@ -62,7 +62,7 @@
         <div class="autogrid-item">
           <input type="checkbox" name="ga" id="ga" <?php if(isset($_POST['ga'])) { echo 'checked="checked"'; } ?>>
           <label for="ga">Google Analytics</label>
-          
+
           <label for="ua">ID de suivi</label>
           <input type="text" name="ua" id="ua" <?php if( isset( $_POST['ua'] ) && empty( $_POST['ua'] ) ) { echo 'value="' . htmlentities( $_POST['ua'] ) . '"'; } ?> placeholder="UA-XXXXX-X">
         </div>
@@ -78,42 +78,42 @@
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/00.png">
           <span>structure HTML seule</span>
-          <input type="radio" name="gabarit" id="gabarit0" class="visually-hidden" value="gabarit0">
+          <input type="radio" name="gabarit" id="gabarit00" class="visually-hidden" value="gabarit00">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="simple" src="assets/img/gabarit/01.png">
           <span>une seule colonne, entête, contenu</span>
-          <input type="radio" name="gabarit" id="gabarit11" class="visually-hidden" value="gabarit11">
+          <input type="radio" name="gabarit" id="gabarit01" class="visually-hidden" value="gabarit01">
         </a>
         <a class="template-item gabarit" href="#">
-          <img alt="nope" src="assets/img/gabarit/05.png">
+          <img alt="nope" src="assets/img/gabarit/02.png">
           <span>sidebar, contenu fluide</span>
-          <input type="radio" name="gabarit" id="gabarit12" class="visually-hidden" value="gabarit12">
+          <input type="radio" name="gabarit" id="gabarit02" class="visually-hidden" value="gabarit02">
         </a>
         <a class="template-item gabarit" href="#">
-          <img alt="nope" src="assets/img/gabarit/07.png">
+          <img alt="nope" src="assets/img/gabarit/03.png">
           <span>entête, sidebar, contenu fluide</span>
-          <input type="radio" name="gabarit" id="gabarit13" class="visually-hidden" value="gabarit13">
+          <input type="radio" name="gabarit" id="gabarit03" class="visually-hidden" value="gabarit03">
         </a>
         <a class="template-item gabarit" href="#">
-          <img alt="simple" src="assets/img/gabarit/01.png">
+          <img alt="simple" src="assets/img/gabarit/04.png">
           <span>entête, sidebar, contenu fluide, footer</span>
-          <input type="radio" name="gabarit" id="gabarit14" class="visually-hidden" value="gabarit14">
+          <input type="radio" name="gabarit" id="gabarit04" class="visually-hidden" value="gabarit04">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/05.png">
           <span>entête, double sidebar, contenu fluide, footer</span>
-          <input type="radio" name="gabarit" id="gabarit21" class="visually-hidden" value="gabarit21">
+          <input type="radio" name="gabarit" id="gabarit05" class="visually-hidden" value="gabarit05">
         </a>
         <a class="template-item gabarit" href="#">
-          <img alt="nope" src="assets/img/gabarit/07.png">
+          <img alt="nope" src="assets/img/gabarit/06.png">
           <span>entête, grille x3, footer</span>
-          <input type="radio" name="gabarit" id="gabarit22" class="visually-hidden" value="gabarit22">
+          <input type="radio" name="gabarit" id="gabarit06" class="visually-hidden" value="gabarit06">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/07.png">
           <span>entête, grille x6, footer</span>
-          <input type="radio" name="gabarit" id="gabarit23" class="visually-hidden" value="gabarit23">
+          <input type="radio" name="gabarit" id="gabarit07" class="visually-hidden" value="gabarit07">
         </a>
       </fieldset>
 
@@ -179,7 +179,7 @@
     <a class="supression">Supprimer cet élément</a>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/global.js"></script>
   <script type="text/javascript">
     var _gaq = _gaq || [];
