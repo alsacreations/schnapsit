@@ -197,13 +197,27 @@ footer::after {
   font-size: .8em;
 }
 
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+.icon-download {
+  width: 3.5rem;
+  height: 3.5rem;
+  fill: $color6
+}
+
 /*
  *
  * Mockup place
  *
  */
 
-#mockup-place {
+[id="mockup-place"] {
   font-size: 1.4rem;
 
   .row > *, .col {
@@ -342,13 +356,21 @@ footer::after {
 
 }
 
-.choice {
+.choices {
+  display: none;
   font-size: 0.85em;
   padding: 10px;
   background: rgba(155, 155, 155, 0.9);
   position: absolute;
   z-index: 2;
   min-width: 200px;
+
+  .suppression {
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+    color: white
+  }
 
   .quit {
     font-family: 'icomoon';
@@ -368,6 +390,12 @@ footer::after {
     padding: 0.4em;
     background-color: white;
     color: #3a3a3a;
+    display: inline-block;
+
+    &.selected {
+      background-color: #EA3852;
+      color: white
+    }
   }
 
 }

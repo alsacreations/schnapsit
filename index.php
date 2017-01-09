@@ -19,6 +19,15 @@
 
 <body>
 
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="icon-download" viewBox="0 0 26 28">
+        <title>download</title>
+        <path class="path1" d="M20 21c0-0.547-0.453-1-1-1s-1 0.453-1 1 0.453 1 1 1 1-0.453 1-1zM24 21c0-0.547-0.453-1-1-1s-1 0.453-1 1 0.453 1 1 1 1-0.453 1-1zM26 17.5v5c0 0.828-0.672 1.5-1.5 1.5h-23c-0.828 0-1.5-0.672-1.5-1.5v-5c0-0.828 0.672-1.5 1.5-1.5h7.266l2.109 2.125c0.578 0.562 1.328 0.875 2.125 0.875s1.547-0.313 2.125-0.875l2.125-2.125h7.25c0.828 0 1.5 0.672 1.5 1.5zM20.922 8.609c0.156 0.375 0.078 0.812-0.219 1.094l-7 7c-0.187 0.203-0.453 0.297-0.703 0.297s-0.516-0.094-0.703-0.297l-7-7c-0.297-0.281-0.375-0.719-0.219-1.094 0.156-0.359 0.516-0.609 0.922-0.609h4v-7c0-0.547 0.453-1 1-1h4c0.547 0 1 0.453 1 1v7h4c0.406 0 0.766 0.25 0.922 0.609z"></path>
+      </symbol>
+    </defs>
+  </svg>
+
   <header>
     <h1><img src="assets/img/logo.png" alt="Schnaps.it"></h1>
     <p class="pre-title">since 1664</p>
@@ -40,10 +49,6 @@
   </section>
 
   <form enctype="multipart/form-data" id="schnapsit">
-
-    <?php echo '<pre style="padding:10px">';
-    print_r( $_POST );
-    echo '</pre>'; ?>
 
     <section class="template">
 
@@ -132,6 +137,9 @@
     </section>
   </form>
 
+  <a id="download" href="#" title="Télécharger le code">
+    <svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg><span class="mls visually-hidden"> icon-download</span>
+  </a>
 
   <footer>
     <h2>Yeuh, mais c'est quoi le secret ?</h2>
@@ -139,11 +147,10 @@
       <br>En plus d'offrir des modèles HTML de base, Schnaps.it inclut les classes CSS du framework <a href="http://knacss.com/">KNACSS</a> offrant une personnalisation aisée de ta page.
       <br>Les textes par défaut sont remplis avec l'algorithme savant <i>Schnapsum®</i>, le lorem ipsum alsacien.</p>
     <p>Ah oui, j'oubliais. Tu savais donc qu'il existe aussi un <a class="button button--alternate" href="https://github.com/raphaelgoetter/brackets-schnapsum">plugin brackets</a> et un <a class="button button--alternate" href="https://gist.github.com/raphaelgoetter/69c84d434ee202dc5c9495591075e2df">snippet Atom</a></p>
-
   </footer>
 
-  <div class="choice">
-    <a class="quit">Q</a>
+  <div class="choices">
+    <a class="quit">&#10006;</a>
     <span class="margin">Margin</span>
       <input type="radio" name="mar" class="visually-hidden" value="mal"><label>Large</label>
       <input type="radio" name="mar" class="visually-hidden" value="mam"><label>Moyen</label>
@@ -176,7 +183,7 @@
       <input type="radio" name="txt" class="visually-hidden" value="txtleft"><label>Gauche</label>
       <input type="radio" name="txt" class="visually-hidden" value="txtcenter"><label>Centre</label>
       <input type="radio" name="txt" class="visually-hidden" value="txtright"><label>Droite</label>
-    <a class="supression">Supprimer cet élément</a>
+    <a class="suppression">Supprimer cet élément</a>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

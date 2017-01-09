@@ -234,8 +234,8 @@ $(document).ready(function(){
 									return false;
 								});
 								
-								// Gérer la suppression 
-								$('.choice').find('.suppression').on('click', function(e){
+								// Gérer la supression 
+								$('.choice').find('.supression').on('click', function(e){
 									e.preventDefault();
 									$('.mockup-body').find('.picked').remove();
 									$('.choice').hide();
