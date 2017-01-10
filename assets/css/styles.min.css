@@ -376,28 +376,48 @@ footer::after {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  margin-left: -1rem;
-  margin-right: -1rem;
-}
-
-.hagrid > * {
-  box-sizing: border-box;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  width: 100%;
-  min-width: 0;
-}
-
-@media (min-width: 545px) {
-  .hagrid > * {
-    width: calc(100% / 2 - 2rem);
-  }
 }
 
 @media (min-width: 769px) {
-  .hagrid > * {
-    width: calc(100% / 3 - 2rem);
+  .hagrid {
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
   }
+}
+
+.hagrid > * {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1 1 0%;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hagrid > *:nth-child(2) {
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hagrid .hero {
+  -webkit-flex: 1 1 0%;
+      -ms-flex: 1 1 0%;
+          flex: 1 1 0%;
+  padding: .5rem;
+  margin: 1rem;
+}
+
+.hagrid [type="checkbox"] {
+  margin-right: .5rem;
+}
+
+.hagrid label {
+  margin-top: 0;
 }
 
 .mygrid {
@@ -430,6 +450,12 @@ footer::after {
   .mygrid > * {
     width: calc(100% / 4 - 1.5rem);
   }
+}
+
+/* hero input */
+.hero {
+  border: 0;
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .template-item {

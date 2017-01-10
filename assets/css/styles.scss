@@ -155,12 +155,43 @@ footer::after {
 /* grid */
 .hagrid {
   margin-bottom: $medium-value;
-  @include grid( 3, 2rem )
+  // @include grid( 3, 2rem );
+  display: flex;
+  flex-wrap: wrap;
+  @media (min-width: $small + 1) {
+    flex-wrap: nowrap;
+  }
+  & > * {
+    display: flex;
+    flex: 1 1 0%;
+    align-items: center;
+    &:nth-child(2) {
+      justify-content: center;
+    }
+
+  }
+  & .hero {
+    flex: 1 1 0%;
+    padding: .5rem;
+    margin: 1rem; 
+  }
+  & [type="checkbox"] {
+    margin-right: .5rem;
+  }
+  & label {
+    margin-top: 0;
+  }
 }
 
 .mygrid {
   margin-bottom: $medium-value;
-  @include grid( 4, 1.5rem )
+  @include grid( 4, 1.5rem );
+}
+
+/* hero input */
+.hero {
+  border: 0;
+  background: rgba(255,255,255,.3);
 }
 
 .template-item {

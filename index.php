@@ -56,7 +56,7 @@
 
         <div>
           <label for="title">Titre</label>
-          <input type="text" name="title" id="title" <?php if( isset( $_POST['title'] ) && empty( $_POST['title'] ) ) { echo 'value="' . htmlentities( $_POST['title'] ) . '"'; } else { echo 'value="J\'aime Schnaps.it"'; } ?> placeholder="J'aime Schnaps.it">
+          <input type="text" name="title" id="title" class="hero" <?php if( isset( $_POST['title'] ) && empty( $_POST['title'] ) ) { echo 'value="' . htmlentities( $_POST['title'] ) . '"'; } else { echo 'value="J\'aime Schnaps.it"'; } ?> placeholder="J'aime Schnaps.it">
         </div>
 
         <div>
@@ -68,8 +68,7 @@
           <input type="checkbox" name="ga" id="ga" <?php if(isset($_POST['ga'])) { echo 'checked="checked"'; } ?>>
           <label for="ga">Google Analytics</label>
 
-          <label for="ua">ID de suivi</label>
-          <input type="text" name="ua" id="ua" <?php if( isset( $_POST['ua'] ) && empty( $_POST['ua'] ) ) { echo 'value="' . htmlentities( $_POST['ua'] ) . '"'; } ?> placeholder="UA-XXXXX-X">
+          <input type="text" name="ua" id="ua" class="hero" <?php if( isset( $_POST['ua'] ) && empty( $_POST['ua'] ) ) { echo 'value="' . htmlentities( $_POST['ua'] ) . '"'; } ?> placeholder="UA-XXXXX-X">
         </div>
 
       </div>

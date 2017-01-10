@@ -11,7 +11,6 @@ $(document).ready(function(){
   \*-----------------------------------------------------------------------------*/
 
    $('#result, .reg, .choice, .ifMockup').hide();
-   $('#ua').prev('label').hide();
 
   /*
    * Check "HTML only" by default
@@ -41,21 +40,6 @@ $(document).ready(function(){
    mockup_place.on('click',function(e) {
     e.stopPropagation();
   });
-
-  /*-----------------------------------------------------------------------------*\
-   *                  Affichage de l'input en cas de google analytics            *
-  \*-----------------------------------------------------------------------------*/
-
-   $('#ga').on('click', function(){
-    if( $('#ga').is(':checked') ) {
-     $('#ua').prev('label').show();
-     $('#ua').show();
-   }
-   else {
-     $('#ua').prev('label').hide();
-     $('#ua').hide();
-   }
- });
 
    /*-----------------------------------------------------------------------------*\
     *                               Choix du gabarit                              *
