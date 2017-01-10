@@ -13,18 +13,18 @@
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/knacss.css">
   <link rel="stylesheet" href="assets/css/styles.min.css">
-
 </head>
 
 <body>
 
   <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
-      <symbol id="icon-download" viewBox="0 0 26 28">
+      <symbol id="icon-download" viewBox="0 0 31 28">
         <title>download</title>
-        <path class="path1" d="M20 21c0-0.547-0.453-1-1-1s-1 0.453-1 1 0.453 1 1 1 1-0.453 1-1zM24 21c0-0.547-0.453-1-1-1s-1 0.453-1 1 0.453 1 1 1 1-0.453 1-1zM26 17.5v5c0 0.828-0.672 1.5-1.5 1.5h-23c-0.828 0-1.5-0.672-1.5-1.5v-5c0-0.828 0.672-1.5 1.5-1.5h7.266l2.109 2.125c0.578 0.562 1.328 0.875 2.125 0.875s1.547-0.313 2.125-0.875l2.125-2.125h7.25c0.828 0 1.5 0.672 1.5 1.5zM20.922 8.609c0.156 0.375 0.078 0.812-0.219 1.094l-7 7c-0.187 0.203-0.453 0.297-0.703 0.297s-0.516-0.094-0.703-0.297l-7-7c-0.297-0.281-0.375-0.719-0.219-1.094 0.156-0.359 0.516-0.609 0.922-0.609h4v-7c0-0.547 0.453-1 1-1h4c0.547 0 1 0.453 1 1v7h4c0.406 0 0.766 0.25 0.922 0.609z"></path>
-      </symbol>
+        <path class="path1" d="M23.668 24.5c0-0.638-0.529-1.167-1.167-1.167s-1.167 0.529-1.167 1.167 0.529 1.167 1.167 1.167 1.167-0.529 1.167-1.167zM28.335 24.5c0-0.638-0.529-1.167-1.167-1.167s-1.167 0.529-1.167 1.167 0.529 1.167 1.167 1.167 1.167-0.529 1.167-1.167zM30.668 20.416v5.833c0 0.966-0.784 1.75-1.75 1.75h-26.832c-0.966 0-1.75-0.784-1.75-1.75v-5.833c0-0.966 0.784-1.75 1.75-1.75h8.476l2.461 2.479c0.674 0.656 1.549 1.021 2.479 1.021s1.805-0.365 2.479-1.021l2.479-2.479h8.458c0.966 0 1.75 0.784 1.75 1.75zM24.744 10.044c0.182 0.437 0.091 0.948-0.255 1.276l-8.166 8.166c-0.219 0.237-0.529 0.346-0.82 0.346s-0.602-0.109-0.82-0.346l-8.166-8.166c-0.346-0.328-0.437-0.838-0.255-1.276 0.182-0.419 0.602-0.711 1.075-0.711h4.666v-8.166c0-0.638 0.529-1.167 1.167-1.167h4.666c0.638 0 1.167 0.529 1.167 1.167v8.166h4.666c0.474 0 0.893 0.292 1.075 0.711z"></path>
+        </symbol>
     </defs>
   </svg>
 
@@ -52,19 +52,19 @@
 
     <section class="template">
 
-      <div class="autogrid">
+      <div class="hagrid">
 
-        <div class="autogrid-item">
+        <div>
           <label for="title">Titre</label>
           <input type="text" name="title" id="title" <?php if( isset( $_POST['title'] ) && empty( $_POST['title'] ) ) { echo 'value="' . htmlentities( $_POST['title'] ) . '"'; } else { echo 'value="J\'aime Schnaps.it"'; } ?> placeholder="J'aime Schnaps.it">
         </div>
 
-        <div class="autogrid-item">
+        <div>
           <input type="checkbox" name="jquery" id="jquery" <?php if(isset($_POST['jquery'])) { echo 'checked="checked"'; } ?>>
           <label for="jquery">Intégrer jQuery ?</label>
         </div>
 
-        <div class="autogrid-item">
+        <div>
           <input type="checkbox" name="ga" id="ga" <?php if(isset($_POST['ga'])) { echo 'checked="checked"'; } ?>>
           <label for="ga">Google Analytics</label>
 
@@ -79,7 +79,7 @@
       <p>Choisis ton gabarit en fonction de tes besoins (nombre de colonnes, hauteurs identiques, grille intégrée), puis télécharge le code source obtenu.</p>
       <p>Dans ton dossier .zip tu trouveras l'ensemble des fichiers nécessaires&nbsp;: HTML et CSS, ainsi que le fichier CSS du micro-framework <a href="http://knacss.com/">KNACSS</a> pour parfaire ton projet.</p>
 
-      <fieldset class="autogrid">
+      <fieldset class="mygrid mtl">
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/00.png">
           <span>structure HTML seule</span>
@@ -122,7 +122,7 @@
         </a>
       </fieldset>
 
-      <div id="mockup-place">
+      <div id="mockup-place" class="mbm">
         <!-- code mockup ici -->
       </div>
 
@@ -137,9 +137,11 @@
     </section>
   </form>
 
-  <a id="download" href="#" title="Télécharger le code">
-    <svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg><span class="mls visually-hidden"> icon-download</span>
-  </a>
+  <section id="download" class="txtcenter">
+    <a href="#" title="Télécharger le code">
+      <svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg><span class="mls visually-hidden"> icon-download</span>
+    </a>
+  </section>
 
   <footer>
     <h2>Yeuh, mais c'est quoi le secret ?</h2>

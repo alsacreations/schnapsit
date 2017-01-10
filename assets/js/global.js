@@ -230,7 +230,7 @@ $(document).ready(function(){
    *                Téléchargement du code généré et des fichiers                *
    \*-----------------------------------------------------------------------------*/
 
-   $('#download').on('click',function(e) {
+   $('#download a').on('click',function(e) {
 
     /*
      * Get mockup HTML 

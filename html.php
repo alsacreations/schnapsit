@@ -48,23 +48,28 @@ ob_start(); ?>
     <link rel="stylesheet" href="css/knacss.css" media="all" />
     <link rel="stylesheet" href="css/styles.css" media="all" />
   </head>
-  <body>
-    <?php
-      if( isset( $_POST['codehtml'] ) && !empty( $_POST['codehtml'] ) ) { echo $_POST['codehtml']; }
-      
-      if( isset($_POST["googleAnalytics"]) && $_POST["googleAnalytics"] == "true" ) {
+  <body><?php
 
-      if( !isset($userChoice["ua"]) || !empty( $userChoice["ua"] ) ) { $userChoice["ua"] = 'UA-XXXXXXXX-X'; } ?>
-      
-      <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  if( isset( $_POST['codehtml'] ) && !empty( $_POST['codehtml'] ) ) {
+    echo $_POST['codehtml'];
+  }
 
-      ga('create',<?php echo $userChoice['ua'] ?>, 'XXXXXXXXXXX.TLD');
-      ga('send', 'pageview');
-      </script><?php } ?>
+  if( isset( $userChoice['jquery'] ) && $userChoice['jquery'] == 'on' ) { ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <?php }
+
+  if( isset( $userChoice['ga'] ) && $userChoice['ga'] == 'on' ) {
+
+    if( isset($userChoice['ua']) && empty( $userChoice['ua'] ) ) { $userChoice['ua'] = 'UA-XXXXXXXX-X'; } ?>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', <?php echo '\'' . $userChoice['ua'] . '\''; ?>, 'XXXXXXXXXXX.TLD');
+    ga('send', 'pageview');
+    </script><?php } // Fin if ga ?>
 
   </body>
 </html><?php
@@ -76,26 +81,23 @@ ob_start(); ?>
   if(isset($_POST["compression"]) && $_POST["compression"]=="true") {
     $file_html   = ob_get_contents();
     ob_end_clean();
-    $file_knacss = file_get_contents("archive/css/knacss.css");
+    $file_knacss = file_get_contents("https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/knacss-unminified.css");
 
     // Création des dossiers
     $dossier = 'tmp'.uniqid();
     mkdir("archive/download/".$dossier);
-    mkdir("archive/download/".$dossier."/js-test");
-    mkdir("archive/download/".$dossier."/css-test");
-    mkdir("archive/download/".$dossier."/img-test");
+    mkdir("archive/download/".$dossier."/js");
+    mkdir("archive/download/".$dossier."/css");
+    mkdir("archive/download/".$dossier."/img");
 
     // Création des fichiers
     $f = fopen("archive/download/".$dossier."/index.html", "x+");
-    $s = fopen("archive/download/".$dossier."/css-test/styles.css", "x+");
-    $k = fopen("archive/download/".$dossier."/css-test/knacss.css", "x+");
+    $k = fopen("archive/download/".$dossier."/css/knacss.css", "x+");
     // Ecriture
     fputs($f, $file_html);
-    fputs($s, "/* Votre Style */");
     fputs($k, $file_knacss);
     // Fermeture
     fclose($f);
-    fclose($s);
     fclose($k);
 
     // Zip avec tous les $file_* (éventuellement dans des dossiers)
@@ -116,8 +118,8 @@ ob_start(); ?>
           $zip->addEmptyDir("js");
           $zip->addEmptyDir("img");
           $zip->addFile("archive/download/".$dossier."/index.html", "index.html");
-          $zip->addFile("archive/download/".$dossier."/css-test/knacss.css", "css/knacss.css");
-          $zip->addFile("archive/download/".$dossier."/css-test/styles.css", "css/styles.css");
+          $zip->addFile("archive/download/".$dossier."/css/knacss.css", "css/knacss.css");
+          $zip->addFile("archive/css/styles.css", "css/styles.css");
         }
 
         // On ferme l’archive.

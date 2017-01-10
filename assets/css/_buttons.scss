@@ -21,7 +21,7 @@
   font-size: inherit;
   cursor: pointer;
   text-decoration: none;
-  color: #fff;
+  color: $color3;
   
   
   &::before {
@@ -30,7 +30,8 @@
     top: 0; left: 0; bottom: 0; right: 0;
   }
   
-  &:hover {
+  &:hover, &:active {
+    color: $color3;
     &::before {
       border: 1px solid $base-color-alternate;
       opacity: .5;
@@ -40,7 +41,7 @@
 }
 
 .button--alternate {
-  margin-left: 1rem;
+  margin: 0 0.5rem;
   background: darken($button-background, 10%);
 }
 .button--download {
