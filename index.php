@@ -83,42 +83,42 @@
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/00.png">
           <span>structure HTML seule</span>
-          <input type="radio" name="gabarit" id="gabarit00" class="visually-hidden" value="gabarit00">
+          <input type="radio" name="gabarit" id="gabarit00" class="visually-hidden" value="00">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="simple" src="assets/img/gabarit/01.png">
           <span>une seule colonne, entête, contenu</span>
-          <input type="radio" name="gabarit" id="gabarit01" class="visually-hidden" value="gabarit01">
+          <input type="radio" name="gabarit" id="gabarit01" class="visually-hidden" value="01">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/02.png">
           <span>sidebar, contenu fluide</span>
-          <input type="radio" name="gabarit" id="gabarit02" class="visually-hidden" value="gabarit02">
+          <input type="radio" name="gabarit" id="gabarit02" class="visually-hidden" value="02">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/03.png">
           <span>entête, sidebar, contenu fluide</span>
-          <input type="radio" name="gabarit" id="gabarit03" class="visually-hidden" value="gabarit03">
+          <input type="radio" name="gabarit" id="gabarit03" class="visually-hidden" value="03">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="simple" src="assets/img/gabarit/04.png">
           <span>entête, sidebar, contenu fluide, footer</span>
-          <input type="radio" name="gabarit" id="gabarit04" class="visually-hidden" value="gabarit04">
+          <input type="radio" name="gabarit" id="gabarit04" class="visually-hidden" value="04">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/05.png">
           <span>entête, double sidebar, contenu fluide, footer</span>
-          <input type="radio" name="gabarit" id="gabarit05" class="visually-hidden" value="gabarit05">
+          <input type="radio" name="gabarit" id="gabarit05" class="visually-hidden" value="05">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/06.png">
           <span>entête, grille x3, footer</span>
-          <input type="radio" name="gabarit" id="gabarit06" class="visually-hidden" value="gabarit06">
+          <input type="radio" name="gabarit" id="gabarit06" class="visually-hidden" value="06">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/07.png">
           <span>entête, grille x6, footer</span>
-          <input type="radio" name="gabarit" id="gabarit07" class="visually-hidden" value="gabarit07">
+          <input type="radio" name="gabarit" id="gabarit07" class="visually-hidden" value="07">
         </a>
       </fieldset>
 
