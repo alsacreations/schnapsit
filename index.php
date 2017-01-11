@@ -13,11 +13,20 @@
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/knacss.css">
   <link rel="stylesheet" href="assets/css/styles.min.css">
-
 </head>
 
 <body>
+
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="icon-download" viewBox="0 0 31 28">
+        <title>download</title>
+        <path class="path1" d="M23.668 24.5c0-0.638-0.529-1.167-1.167-1.167s-1.167 0.529-1.167 1.167 0.529 1.167 1.167 1.167 1.167-0.529 1.167-1.167zM28.335 24.5c0-0.638-0.529-1.167-1.167-1.167s-1.167 0.529-1.167 1.167 0.529 1.167 1.167 1.167 1.167-0.529 1.167-1.167zM30.668 20.416v5.833c0 0.966-0.784 1.75-1.75 1.75h-26.832c-0.966 0-1.75-0.784-1.75-1.75v-5.833c0-0.966 0.784-1.75 1.75-1.75h8.476l2.461 2.479c0.674 0.656 1.549 1.021 2.479 1.021s1.805-0.365 2.479-1.021l2.479-2.479h8.458c0.966 0 1.75 0.784 1.75 1.75zM24.744 10.044c0.182 0.437 0.091 0.948-0.255 1.276l-8.166 8.166c-0.219 0.237-0.529 0.346-0.82 0.346s-0.602-0.109-0.82-0.346l-8.166-8.166c-0.346-0.328-0.437-0.838-0.255-1.276 0.182-0.419 0.602-0.711 1.075-0.711h4.666v-8.166c0-0.638 0.529-1.167 1.167-1.167h4.666c0.638 0 1.167 0.529 1.167 1.167v8.166h4.666c0.474 0 0.893 0.292 1.075 0.711z"></path>
+        </symbol>
+    </defs>
+  </svg>
 
   <header>
     <h1><img src="assets/img/logo.png" alt="Schnaps.it"></h1>
@@ -40,31 +49,26 @@
   </section>
 
   <form enctype="multipart/form-data" id="schnapsit">
-    
-    <?php echo '<pre style="padding:10px">';
-    print_r( $_POST );
-    echo '</pre>'; ?>
 
     <section class="template">
-      
-      <div class="autogrid">
-        
-        <div class="autogrid-item">
+
+      <div class="hagrid">
+
+        <div>
           <label for="title">Titre</label>
-          <input type="text" name="title" id="title" <?php if( isset( $_POST['title'] ) && empty( $_POST['title'] ) ) { echo 'value="' . htmlentities( $_POST['title'] ) . '"'; } else { echo 'value="J\'aime Schnaps.it"'; } ?> placeholder="J'aime Schnaps.it">
+          <input type="text" name="title" id="title" class="hero" <?php if( isset( $_POST['title'] ) && empty( $_POST['title'] ) ) { echo 'value="' . htmlentities( $_POST['title'] ) . '"'; } else { echo 'value="J\'aime Schnaps.it"'; } ?> placeholder="J'aime Schnaps.it">
         </div>
 
-        <div class="autogrid-item">
+        <div>
           <input type="checkbox" name="jquery" id="jquery" <?php if(isset($_POST['jquery'])) { echo 'checked="checked"'; } ?>>
           <label for="jquery">Intégrer jQuery ?</label>
         </div>
 
-        <div class="autogrid-item">
+        <div>
           <input type="checkbox" name="ga" id="ga" <?php if(isset($_POST['ga'])) { echo 'checked="checked"'; } ?>>
           <label for="ga">Google Analytics</label>
-          
-          <label for="ua">ID de suivi</label>
-          <input type="text" name="ua" id="ua" <?php if( isset( $_POST['ua'] ) && empty( $_POST['ua'] ) ) { echo 'value="' . htmlentities( $_POST['ua'] ) . '"'; } ?> placeholder="UA-XXXXX-X">
+
+          <input type="text" name="ua" id="ua" class="hero" <?php if( isset( $_POST['ua'] ) && empty( $_POST['ua'] ) ) { echo 'value="' . htmlentities( $_POST['ua'] ) . '"'; } ?> placeholder="UA-XXXXX-X">
         </div>
 
       </div>
@@ -74,50 +78,52 @@
       <p>Choisis ton gabarit en fonction de tes besoins (nombre de colonnes, hauteurs identiques, grille intégrée), puis télécharge le code source obtenu.</p>
       <p>Dans ton dossier .zip tu trouveras l'ensemble des fichiers nécessaires&nbsp;: HTML et CSS, ainsi que le fichier CSS du micro-framework <a href="http://knacss.com/">KNACSS</a> pour parfaire ton projet.</p>
 
-      <fieldset class="autogrid">
+      <fieldset class="mygrid mtl">
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/00.png">
           <span>structure HTML seule</span>
-          <input type="radio" name="gabarit" id="gabarit0" class="visually-hidden" value="gabarit0">
+          <input type="radio" name="gabarit" id="gabarit00" class="visually-hidden" value="00">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="simple" src="assets/img/gabarit/01.png">
           <span>une seule colonne, entête, contenu</span>
-          <input type="radio" name="gabarit" id="gabarit11" class="visually-hidden" value="gabarit11">
+          <input type="radio" name="gabarit" id="gabarit01" class="visually-hidden" value="01">
         </a>
         <a class="template-item gabarit" href="#">
-          <img alt="nope" src="assets/img/gabarit/05.png">
+          <img alt="nope" src="assets/img/gabarit/02.png">
           <span>sidebar, contenu fluide</span>
-          <input type="radio" name="gabarit" id="gabarit12" class="visually-hidden" value="gabarit12">
+          <input type="radio" name="gabarit" id="gabarit02" class="visually-hidden" value="02">
         </a>
         <a class="template-item gabarit" href="#">
-          <img alt="nope" src="assets/img/gabarit/07.png">
+          <img alt="nope" src="assets/img/gabarit/03.png">
           <span>entête, sidebar, contenu fluide</span>
-          <input type="radio" name="gabarit" id="gabarit13" class="visually-hidden" value="gabarit13">
+          <input type="radio" name="gabarit" id="gabarit03" class="visually-hidden" value="03">
         </a>
         <a class="template-item gabarit" href="#">
-          <img alt="simple" src="assets/img/gabarit/01.png">
+          <img alt="simple" src="assets/img/gabarit/04.png">
           <span>entête, sidebar, contenu fluide, footer</span>
-          <input type="radio" name="gabarit" id="gabarit14" class="visually-hidden" value="gabarit14">
+          <input type="radio" name="gabarit" id="gabarit04" class="visually-hidden" value="04">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/05.png">
           <span>entête, double sidebar, contenu fluide, footer</span>
-          <input type="radio" name="gabarit" id="gabarit21" class="visually-hidden" value="gabarit21">
+          <input type="radio" name="gabarit" id="gabarit05" class="visually-hidden" value="05">
         </a>
         <a class="template-item gabarit" href="#">
-          <img alt="nope" src="assets/img/gabarit/07.png">
+          <img alt="nope" src="assets/img/gabarit/06.png">
           <span>entête, grille x3, footer</span>
-          <input type="radio" name="gabarit" id="gabarit22" class="visually-hidden" value="gabarit22">
+          <input type="radio" name="gabarit" id="gabarit06" class="visually-hidden" value="06">
         </a>
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/07.png">
           <span>entête, grille x6, footer</span>
-          <input type="radio" name="gabarit" id="gabarit23" class="visually-hidden" value="gabarit23">
+          <input type="radio" name="gabarit" id="gabarit07" class="visually-hidden" value="07">
         </a>
       </fieldset>
 
-      <div id="mockup-place">
+      <textarea spellcheck="false" rows="20" id="result" class="hero"></textarea>
+
+      <div id="mockup-place" class="mbm">
         <!-- code mockup ici -->
       </div>
 
@@ -132,6 +138,11 @@
     </section>
   </form>
 
+  <section id="download" class="txtcenter">
+    <a href="#" title="Télécharger le code">
+      <svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg><span class="mls visually-hidden"> icon-download</span>
+    </a>
+  </section>
 
   <footer>
     <h2>Yeuh, mais c'est quoi le secret ?</h2>
@@ -139,11 +150,10 @@
       <br>En plus d'offrir des modèles HTML de base, Schnaps.it inclut les classes CSS du framework <a href="http://knacss.com/">KNACSS</a> offrant une personnalisation aisée de ta page.
       <br>Les textes par défaut sont remplis avec l'algorithme savant <i>Schnapsum®</i>, le lorem ipsum alsacien.</p>
     <p>Ah oui, j'oubliais. Tu savais donc qu'il existe aussi un <a class="button button--alternate" href="https://github.com/raphaelgoetter/brackets-schnapsum">plugin brackets</a> et un <a class="button button--alternate" href="https://gist.github.com/raphaelgoetter/69c84d434ee202dc5c9495591075e2df">snippet Atom</a></p>
-
   </footer>
 
-  <div class="choice">
-    <a class="quit">Q</a>
+  <div class="choices">
+    <a class="quit">&#10006;</a>
     <span class="margin">Margin</span>
       <input type="radio" name="mar" class="visually-hidden" value="mal"><label>Large</label>
       <input type="radio" name="mar" class="visually-hidden" value="mam"><label>Moyen</label>
@@ -176,10 +186,10 @@
       <input type="radio" name="txt" class="visually-hidden" value="txtleft"><label>Gauche</label>
       <input type="radio" name="txt" class="visually-hidden" value="txtcenter"><label>Centre</label>
       <input type="radio" name="txt" class="visually-hidden" value="txtright"><label>Droite</label>
-    <a class="supression">Supprimer cet élément</a>
+    <a class="suppression">Supprimer cet élément</a>
   </div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/global.js"></script>
   <script type="text/javascript">
     var _gaq = _gaq || [];

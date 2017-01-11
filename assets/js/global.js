@@ -1,299 +1,287 @@
 $(document).ready(function(){
 
-	var gabarits		= $( '.gabarit' );
-	var gabarit_default = $('#gabarit0');
-	var inputs			= $('#schnapsit input, #schnapsit select');
+  var gabarits        = $( '.gabarit' );
+  var gabarit_default = $( '#gabarit0' );
+  var inputs          = $( '#schnapsit input, #schnapsit select' );
+  var mockup_place    = $( '[id="mockup-place"]' );
+  var custom_choices  = $( '.choices' );
 
-	// On cache les éléments au chargement de la page
- 	$('#result, .reg, .choice, .ifMockup').hide();
- 	$('#ua').prev('label').hide();
+  /*-----------------------------------------------------------------------------*\
+   *                  On cache les éléments au chargement de la page             *
+  \*-----------------------------------------------------------------------------*/
 
- 	// Check "HTML only" by default
- 	gabarit_default.prop('checked', true);
+   $('#result, .reg, .choice, .ifMockup').hide();
 
- 	// hijack link click
- 	$('fieldset a').on('click', function(e){
- 		e.preventDefault();
- 	});
+  /*
+   * Check "HTML only" by default
+   */
 
-	inputs.each(function(){
-		$(this).on('change', function(e){
-			e.preventDefault();
-			e.stopPropagation();
-		});
-	});
+   gabarit_default.prop('checked', true);
 
-	// Affichage de l'input en cas de google analytics
-	$('#ga').on('click', function(){
-		if( $('#ga').is(':checked') ) {
-			$('#ua').prev('label').show();
-			$('#ua').show();
-		}
-		else {
-			$('#ua').prev('label').hide();
-			$('#ua').hide();
-		}
-	});
+  /*-----------------------------------------------------------------------------*\
+   *                              Hijack link click                              *
+  \*-----------------------------------------------------------------------------*/
 
-	// Choix du gabarit
-	gabarits.each(function(){
-		
-		$(this).on('click', function(e){
+   $('fieldset a').on('click', function(e){
+     e.preventDefault();
+   });
 
-			// Variables
-			var gabarit_input 	  = $(this).find('input');
-			var gabarit_input_val = gabarit_input.val();
+   inputs.each(function(){
+    $(this).on('change', function(e){
+     return false;
+   });
+  });
 
-			// Remove custom CSS box
-			$('.choice').hide();
+   $('body').on('click', function(){
+    custom_choices.hide();
+    $( '.picked' ).removeClass( 'picked' );
+  });
 
-			// Remove CSS class from all items except selected 
-			gabarits.removeClass('gabaritselected');
-			$(this).addClass('gabaritselected');
+   mockup_place.on('click',function(e) {
+    e.stopPropagation();
+  });
 
-			// Check selected radio
-			gabarit_input.prop('checked', true);
+  /*-----------------------------------------------------------------------------*\
+   *                               Choix du gabarit                              *
+  \*-----------------------------------------------------------------------------*/
 
-			// Si gabarit différent du "sans gabarit"
-			if( gabarit_input_val && gabarit_input_val != 'gabarit0' ) {
+   gabarits.each(function(){
 
-				$('.ifMockup').show();
-				$('textarea').hide();
+    $(this).on('click', function(e){
 
-				$('#mockup-place').load('gabarits/' + gabarit_input_val + '.php', function(){
+     var gabarit_input    = $(this).find('input');
+     var gabarit_input_val = gabarit_input.val();
 
-					$('.edit').each(function(e){
+      /*
+       * Remove custom CSS box
+       */
 
-						// Customisation des éléments edit
-						$(this).on('click', function(e){
+      $('.choice').hide();
 
-							var edit = $(this);
+      /*
+       * Remove CSS class from all items except selected
+       */
 
-							$('[type=radio]').each(function(e){
-								if(edit.hasClass($(this).val())) {
-									$(this).next('label').css({
-										backgroundColor: '#EA3852',
-										color: 'white'
-									});
-								} 
-								if(!edit.hasClass('txtcenter') && !edit.hasClass('txtright')) {
-									$('[type=radio][name=txt][value=txtleft]').next('label').css({
-										backgroundColor: '#EA3852',
-										color: 'white'
-									});
-								}
-								if(!edit.hasClass('mal') && !edit.hasClass('mam') && !edit.hasClass('mas') && !edit.hasClass('ma0')) {
-									$('[type=radio][name=mar][value=""]').next('label').css({
-										backgroundColor: '#EA3852',
-										color: 'white'
-									});
-								}
-								if(!edit.hasClass('pal') && !edit.hasClass('pam') && !edit.hasClass('pas') && !edit.hasClass('pa0')) {
-									$('[type=radio][name=pad][value=""]').next('label').css({
-										backgroundColor: '#EA3852',
-										color: 'white'
-									});
-								}             
-								if(!edit.hasClass('w10') && !edit.hasClass('w20') && !edit.hasClass('w25') && !edit.hasClass('w30') && !edit.hasClass('w33') && !edit.hasClass('w40') && !edit.hasClass('w50') && !edit.hasClass('w60') && !edit.hasClass('w66') && !edit.hasClass('w70') && !edit.hasClass('w75') && !edit.hasClass('w80') && !edit.hasClass('w90') && !edit.hasClass('w100')) {
-									$('[type=radio][name=lar][value="auto"]').next('label').css({
-										backgroundColor: '#EA3852',
-										color: 'white'
-									});
-								}
-							});
+      gabarits.removeClass('gabaritselected');
+      $(this).addClass('gabaritselected');
 
-							$('.picked').removeClass('picked');
-							$(this).addClass('picked');
-								var leftPosition = e.pageX ; /*$(this).offset().left + 40;*/
-								var topPosition = $(this).offset().top + 20;
+      /* 
+       * Check selected radio
+       */
 
-								$('.choice').show().css({
-									left: leftPosition,
-									top: topPosition
-								});
+      gabarit_input.prop('checked', true);
 
-								// Gérer le margin 
-								$('[type=radio][name=mar]').next('label').on('click', function(){
-									$(this).prev('[type=radio]').prop('checked', 'true');
-									var mar = $(this).prev('[type=radio]').prop('value');
-									
-									$('[type=radio][name=mar]').next('label').not(this).css({
-										backgroundColor: 'white',
-										color: '#3A3A3A'
-									});
-								 	$(this).css({
-										backgroundColor: '#EA3852',
-										color: 'white'
-									});
-									$('.mockup-body').find('.picked').removeClass('mal mam mas ma0');
-									$('.mockup-body').find('.picked').addClass(mar);
-									return false;
-								});	
+      /*
+       * Si gabarit différent du "sans gabarit"
+       */
 
-								// Gérer le padding 
-								$('[type=radio][name=pad]').next('label').on('click', function(){
-									$(this).prev('[type=radio]').prop('checked', 'true');
-									var pad = $(this).prev('[type=radio]').prop('value');
-									$('[type=radio][name=pad]').next('label').not(this).css({
-										backgroundColor: 'white',
-										color: '#3A3A3A'
-									});
-								 	$(this).css({
-										backgroundColor: '#EA3852',
-										color: 'white'
-									});
-									$('.mockup-body').find('.picked').removeClass('pal pam pas pa0');
-									$('.mockup-body').find('.picked').addClass(pad);
-									return false;
-								});	
+      if( gabarit_input_val && gabarit_input_val != '00' ) {
 
-								// Gérer la largeur 
-								$('[type=radio][name=lar]').next('label').on('click', function(){
-									
-									$(this).prev('[type=radio]').prop('checked', 'true');
-									
-									var lar = $(this).prev('[type=radio]').prop('value');
-									
-									$('[type=radio][name=lar]').next('label').not(this).css({
-										backgroundColor: 'white',
-										color: '#3A3A3A'
-									});
+        $('.ifMockup').show();
+        $('textarea').hide();
 
-								 	$(this).css({
-										backgroundColor: '#EA3852',
-										color: 'white'
-									});
-									if(lar == 'auto') {
-										$('.mockup-body').find('.picked').removeClass('w10 w20 w25 w30 w33 w40 w50 w60 w66 w70 w75 w80 w90 w100').css('width', 'auto');
-									}
-									else {
-										$('.mockup-body').find('.picked').removeProp('style').removeAttr('style').removeClass('w10 w20 w25 w30 w33 w40 w50 w60 w66 w70 w75 w80 w90 w100').addClass(lar);
-									}
-									return false;
-								});
-								
-								// Gérer la supression 
-								$('.choice').find('.supression').on('click', function(e){
-									e.preventDefault();
-									$('.mockup-body').find('.picked').remove();
-									$('.choice').hide();
-									return false;
-								});
+        /*
+         * Load HTML template
+         */
 
-								// Gérer les alignements
-								$('[type=radio][name=txt]').next('label').on('click', function(){
-									$(this).prev('[type=radio]').prop('checked', 'true');
-									var txt = $(this).prev('[type=radio]').prop('value');
-									$('[type=radio][name=txt]').next('label').not(this).css({
-										backgroundColor: 'white',
-										color: '#3A3A3A'
-									});
+         mockup_place.load( 'gabarits/' + gabarit_input_val + '.html', function( response, status, xhr ) {
 
-								 	$(this).css({
-										backgroundColor: '#EA3852',
-										color: 'white'
-									});
+           if ( status == "error" ) {
+            mockup_place.html( '<p class="error">Votre template n\'a pas pu être téléchargé.</p>' );
+          }
 
-									$('.mockup-body').find('.picked').removeClass('txtcenter txtright txtleft');
-									$('.mockup-body').find('.picked').addClass(txt);
-									return false;
-								});	
+          /*
+           * Function performed if load complete
+           * Handle click on HTML template elements
+           */
 
-								// Quitter 
-								$('.choice').find('.quit').on('click', function(e){
-									e.preventDefault();
-									$('*').removeClass('picked');
-									$('.choice').hide();
-									return false;
-								});
-							return false;
-						});	
-					});
-				});
-			}
-			// Si gabarit "sans gabarit"
-			if(gabarit_input_val == 'gabarit0') {
-				$("#generer").trigger('click');
-				$('.reg').hide();
-				$('#mockup-place').empty();
-				$('.ifNotMockup').show();
-				$('.ifMockup').hide();
+          $('.edit').each(function(e){
 
-				$('#monForm input, #monForm select').each(function(){	
-		 			$(this).on('change', function(e){
-						e.preventDefault();
-						e.stopPropagation();
-						$('#generer').trigger('click');
-			 		});
-			 	});
-			}
-			return false;			
-		});
-	});
+          /*
+           * Set default values
+           */
 
-	$('body').on('click', function(e){
-		$('.choice').hide();
-	});
+           var default_values = {
+             'mar' : '',
+             'pad' : 'pam',
+             'lar' : 'auto',
+             'txt' : 'txtleft'
+           };
 
-	$("#mockup-place").on("click",function(e) {
-		e.stopPropagation();
-	});
+           for (i in default_values) {
+             $( '[name="'+ i +'"][value="'+ default_values[i] +'"]' ).next( 'label' ).addClass( 'selected' );
+           }
 
-	// Téléchargement du code généré et des fichiers
-	$('#download').on('click',function(e) {
-		e.preventDefault();
+            /*
+             * Customisation des éléments edit
+             */
 
-		var codehtml = $('#mockup-place').clone();
+             $(this).on('click', function(e){
 
-		// Nettoyage du code téléchargé par rapport à celui proposé
-		codehtml.find('*').each(function(e) {
-			$(this).removeProp('style').removeAttr('style').removeClass('edit grey1 grey2 grey3 grey4 picked txtchange');
+               var edit          = $(this);
+               var leftPosition = e.pageX;
+               var topPosition  = edit.offset().top + 20;
+               var radio_inputs = {
+                'mar' : [ 'mal', 'mam', 'mas', 'ma0' ],
+                'pad' : [ 'pal', 'pam', 'pas', 'pas0' ],
+                'lar' : [ 'w10', 'w20', 'w25', 'w30', 'w33', 'w40', 'w50', 'w60', 'w66', 'w70', 'w75', 'w80', 'w90', 'w100' ],
+                'txt' : [ 'txtcenter', 'txtright', 'txtleft' ]
+              };
 
-			if($(this).attr('id') == 'mockup-footer'){
-				$(this).attr('id', 'footer');
-			}
+              /*
+               * Target picked item
+               */
 
-			if($(this).attr('id') == 'mockup-header'){
-				$(this).attr('id', 'header');
-			}
+              $( '.picked' ).removeClass('picked');
+              edit.addClass('picked');
 
-			if($(this).attr('id') == 'mockup-navigation'){
-				$(this).attr('id', 'navigation');
-			}
+              /*
+               * Display custom box near picked item
+               */
 
-			if($(this).attr('id') == 'mockup-main'){
-				$(this).attr('id', 'main');
-			}
+              custom_choices.show().css({
+                left: leftPosition,
+                top: topPosition
+              });
 
-			if($(this).hasClass('mockup-content')){
-				$(this).addClass('content');
-				$(this).removeClass('mockup-content')
-			}
+              $.each(radio_inputs, function(index, val) {
+                $( '[type=radio][name=' + index + ']' ).next('label').on('click', function() {
 
-			if($(this).hasClass('mockup-aside')){
-				$(this).addClass('aside');
-				$(this).removeClass('mockup-aside')
-			}
+                 var radio         = $(this).prev('[type=radio]');
+                 var radio_value   = radio.prop( 'value' );
+                 var picked_element = $('.mockup-body').find('.picked');
 
-			if($(this).hasClass('choice')) {
-				$(this).remove();
-			}
-		});
+                  /*
+                   * Check correct radio button
+                   */
 
-		codehtml = codehtml.contents().unwrap().html();
+                  radio.prop('checked', 'true');
 
-		$.post('html.php',{
-			compression : true,
-			googleAnalytics : $('#google-analytics').prop('checked'),
-			codehtml:codehtml,
-			datas : $('#monForm').serialize()
-		},function(dossier) {
-			if(dossier.length==16) {
-				document.location.href='download.php?gab='+dossier;
-			}
-		},'text');
+                  /*
+                   * Add CSS class to the picked element label
+                   */
 
-		return false;
-	});
+                  $('[type=radio][name=' + index + ']').next('label').removeClass( 'selected' );
+                  $(this).addClass( 'selected' );
+
+                  /*
+                   * Add picked CSS class to the element or style attr if width:auto
+                   */
+
+                  if( radio_value == 'auto' ) {
+                    picked_element.removeClass( val.join( ' ' ) ).css('width', 'auto');
+                  } else {
+                    picked_element.removeAttr('style').removeClass( val.join( ' ' ) ).addClass( radio_value );
+                  }
+                  return false;
+                });
+              });
+
+              // Gérer la suppression 
+              custom_choices.find( '.suppression' ).on('click', function(e){
+                $( '.mockup-body' ).find( '.picked' ).remove();
+                custom_choices.hide();
+                return false;
+              });
+
+                // Quitter 
+                custom_choices.find('.quit').on('click', function(e){
+                  $( '.picked' ).removeClass( 'picked' );
+                  custom_choices.hide();
+                  return false;
+                });
+               return false;
+             });
+           });
+        });
+       }
+
+      // Si gabarit "sans gabarit"
+      if(gabarit_input_val == '00') {
+        mockup_place.empty();
+
+        $.post('html.php',
+        {
+          compression: false,
+          googleAnalytics : $('#ga').prop('checked'),
+          datas : $('#schnapsit').serialize()
+        },
+        function(data,status){
+          $('#result').show().val(data);
+        });
+
+        inputs.each(function(){ 
+          $(this).on('change', function(e){
+            return false;
+          });
+        });
+      }
+      return false;
+    });
+});
+
+  /*-----------------------------------------------------------------------------*\
+   *                Téléchargement du code généré et des fichiers                *
+  \*-----------------------------------------------------------------------------*/
+
+   $('#download a').on('click',function(e) {
+
+    /*
+     * Get mockup HTML 
+     */
+
+     var codehtml = mockup_place.clone();
+
+     var attr_cleanup = {
+       id : {
+        'mockup-header'     : 'header',
+        'mockup-footer'     : 'footer',
+        'mockup-main'       : 'main',
+        'mockup-navigation' : 'navigation'
+      },
+      class : {
+        'mockup-content' : 'content',
+        'mockup-aside'   : 'aside'
+      }
+    };
+
+    /*
+     * HTML cleanup
+     */
+
+    codehtml.find( '*' ).each(function(e) {
+
+      that = $(this);
+      that.removeProp('style').removeAttr('style').removeClass('edit picked');
+
+      $.each(attr_cleanup.id, function(index, val) {
+        if( that.attr( 'id' ) === index ) {
+          that.attr( 'id', val );
+        }
+      });
+
+     $.each(attr_cleanup.class, function(index, val) {
+        if( that.hasClass( index ) ) {
+         that.addClass( val );
+         that.removeClass( index );
+       }
+     });
+
+    });
+
+    codehtml = codehtml.contents().unwrap().html();
+
+    $.post( 'html.php',
+    {
+      compression     : true,
+      googleAnalytics : $('#ga').prop('checked'),
+      codehtml        : codehtml,
+      datas           : $('#schnapsit').serialize()
+    }, function(dossier) {
+        document.location.href='download.php?gab='+dossier;
+      }, 'text'
+   );
+     return false;
+  });
 
 });

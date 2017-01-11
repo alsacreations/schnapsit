@@ -98,7 +98,7 @@ footer {
   background-color: $template-background;
 }
 footer {
-  padding-bottom: 4rem;
+  padding-bottom: $large-value;
   position: relative;
   background-color: $footer-background;
   color: $base-color-alternate;
@@ -109,7 +109,7 @@ footer::after {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 2rem;
+  bottom: $medium-value;
   border-bottom: 1px dashed rgba(255, 255, 255, .25);
 }
 
@@ -153,18 +153,57 @@ footer::after {
 }
 
 /* grid */
-.autogrid {
-  margin-bottom: 2rem;
-}
-@media (min-width: 545px) {
-  .autogrid {
-    @include grid(4, 1.5rem);
+.hagrid {
+  margin-bottom: $medium-value;
+  // @include grid( 3, 2rem );
+  display: flex;
+  flex-wrap: wrap;
+  @media (min-width: $small + 1) {
+    flex-wrap: nowrap;
+  }
+  & > * {
+    display: flex;
+    flex: 1 1 0%;
+    align-items: center;
+    &:nth-child(2) {
+      justify-content: center;
+    }
+
+  }
+  & .hero {
+    flex: 1 1 0%;
+    padding: .5rem;
+    margin: 1rem; 
+  }
+  & [type="checkbox"] {
+    margin-right: .5rem;
+  }
+  & label {
+    margin-top: 0;
   }
 }
+
+.mygrid {
+  margin-bottom: $medium-value;
+  padding: 0;
+  @include grid( 4, 1.5rem );
+
+  & img {
+    margin-bottom: $small-value
+  }
+}
+
+/* hero input */
+.hero {
+  border: 0;
+  padding: .5rem;
+  background: rgba(255,255,255,.3);
+}
+
 .template-item {
   position: relative;
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 2rem 1.5rem;
   margin-bottom: 1.5rem;
   background: rgba(255, 255, 255, .3);
   text-align: center;
@@ -197,158 +236,94 @@ footer::after {
   font-size: .8em;
 }
 
+[id="download"] a {
+  display: inline-block;
+  padding: $medium-value $large-value;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+.icon-download {
+  width: 14rem;
+  height: 14rem;
+  fill: $color6;
+}
+
 /*
  *
  * Mockup place
  *
  */
 
-#mockup-place {
+[id="result"] {
+  width: 100%;
+  font-size: 1.5rem;
+  color: $color1;
+}
+
+[id="mockup-place"] {
   font-size: 1.4rem;
 
-  .row > *, .col {
-    display: table-cell;
-    vertical-align: top;
-  }
-
-  .edit{
+  .edit {
     cursor: pointer;
     position: relative;
   }
 
-  .left {
-    float: left;
+  .picked { background-color: #EA3852; }
 
-    &.left { margin-right: 1em }
-  }
-
-  /* right elements */
-  .right {
-    float: right;
-    
-    &.right { margin-left: 1em }
-  }
-
-  img.left, img.right {
-    margin-bottom: 5px;
-  }
-
-  .center    { margin-left: auto; margin-right: auto; }
-  .txtleft   { text-align: left; }
-  .txtright  { text-align: right; }
-  .txtcenter { text-align: center; }
-
-  .grey1{ background-color: #CCCCCC }
-  .grey2{ background-color: #AAAAAA }
-  .grey3{ background-color: #BABABA }
-  .grey4{ background-color: #ffffff }
-  .picked{ background-color: #EA3852 }
   .choice label{
     margin: 0.4em 0.4em;
     padding: 0.4em;
     background-color: white;
+    
+    &:hover{
+      background-color: #EA3852;
+      color: white;
+    }
   }
 
-  .choice label:hover{
-    background-color: #EA3852;
+  .reg {
     color: white;
+
+    &:hover { color: #EA3852; }
   }
 
-  .reg{ color: white }
-  .reg:hover{ color: #EA3852 }
+  header { background: #ddd; }
+  footer {
+    color: $color1;
+    background: #ddd;
 
-  .inbl {
-    display: inline-block;
-    vertical-align: top;
+    &:after { content: none; }
   }
 
-  header { background: none };
-  footer { &:after { content: none } }
+  ul { background: #bbb; }
+  li, & [class*="grid"] > * { background: #ccc; }
 
-  .w10    { width: 10%; }
-  .w20    { width: 20%; }
-  .w25    { width: 25%; }
-  .w30    { width: 30%; }
-  .w33    { width: 33.3333%; }
-  .w40    { width: 40%; }
-  .w50    { width: 50%; }
-  .w60    { width: 60%; }
-  .w66    { width: 66.6666%; }
-  .w70    { width: 70%; }
-  .w75    { width: 75%; }
-  .w80    { width: 80%; }
-  .w90    { width: 90%; }
-  .w100   { width: 100%; }
-
-  .w50p   { width: 50px; }
-  .w100p  { width: 100px; }
-  .w150p  { width: 150px; }
-  .w200p  { width: 200px; }
-  .w300p  { width: 300px; }
-  .w400p  { width: 400px; }
-  .w500p  { width: 500px; }
-  .w600p  { width: 600px; }
-  .w700p  { width: 700px; }
-  .w800p  { width: 800px; }
-  .w960p  { width: 960px; }
-  .mw960p { max-width: 960px; }
-  .w1140p  { width: 1140px; }
-  .mw1140p { max-width: 1140px; }
-
-  .m-reset, .ma0 { margin: 0; }
-  .p-reset, .pa0 { padding: 0; }
-  .ma1, .mas { margin: 10px; }
-  .ma2, .mam { margin: 20px; }
-  .ma3, .mal { margin: 30px; }
-  .pa1, .pas { padding: 10px; }
-  .pa2, .pam { padding: 20px; }
-  .pa3, .pal { padding: 30px; }
-
-  .mt0, .mtn { margin-top: 0; }
-  .mt1, .mts { margin-top: 10px; }
-  .mt2, .mtm { margin-top: 20px; }
-  .mt3, .mtl { margin-top: 30px; }
-  .mr0, .mrn { margin-right: 0; }
-  .mr1, .mrs { margin-right: 10px; }
-  .mr2, .mrm { margin-right: 20px; }
-  .mr3, .mrl { margin-right: 30px; }
-  .mb0, .mbn { margin-bottom: 0; }
-  .mb1, .mbs { margin-bottom: 10px; }
-  .mb2, .mbm { margin-bottom: 20px; }
-  .mb3, .mbl { margin-bottom: 30px; }
-  .ml0, .mln { margin-left: 0; }
-  .ml1, .mls { margin-left: 10px; }
-  .ml2, .mlm { margin-left: 20px; }
-  .ml3, .mll { margin-left: 30px; }
-
-  .pt0, .ptn { padding-top: 0; }
-  .pt1, .pts { padding-top: 10px; }
-  .pt2, .ptm { padding-top: 20px; }
-  .pt3, .ptl { padding-top: 30px; }
-  .pr0, .prn { padding-right: 0; }
-  .pr1, .prs { padding-right: 10px; }
-  .pr2, .prm { padding-right: 20px; }
-  .pr3, .prl { padding-right: 30px; }
-  .pb0, .pbn { padding-bottom: 0; }
-  .pb1, .pbs { padding-bottom: 10px; }
-  .pb2, .pbm { padding-bottom: 20px; }
-  .pb3, .pbl { padding-bottom: 30px; }
-  .pl0, .pln { padding-left: 0; }
-  .pl1, .pls { padding-left: 10px; }
-  .pl2, .plm { padding-left: 20px; }
-  .pl3, .pll { padding-left: 30px; }
-
-  footer { clear: left }
-
+  main { background: #eee; }
+  aside { background: #aaa; }
 }
 
-.choice {
+.choices {
+  display: none;
   font-size: 0.85em;
   padding: 10px;
   background: rgba(155, 155, 155, 0.9);
   position: absolute;
   z-index: 2;
   min-width: 200px;
+
+  .suppression {
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+    color: white
+  }
 
   .quit {
     font-family: 'icomoon';
@@ -368,6 +343,12 @@ footer::after {
     padding: 0.4em;
     background-color: white;
     color: #3a3a3a;
+    display: inline-block;
+
+    &.selected {
+      background-color: #EA3852;
+      color: white
+    }
   }
 
 }
