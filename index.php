@@ -75,8 +75,8 @@
 
       <img class="fr" alt="la réflexion c'est maintenant" src="assets/img/cerveau.png">
       <h2>Ton template HTML maintenant ? Hopla !</h2>
-      <p>Choisis ton gabarit en fonction de tes besoins (nombre de colonnes, hauteurs identiques, grille intégrée), puis télécharge le code source obtenu.</p>
-      <p>Dans ton dossier .zip tu trouveras l'ensemble des fichiers nécessaires&nbsp;: HTML et CSS, ainsi que le fichier CSS du micro-framework <a href="http://knacss.com/">KNACSS</a> pour parfaire ton projet.</p>
+      <p>Choisis ton gabarit en fonction de tes besoins (nombre de colonnes, hauteurs identiques, grille intégrée), ensuite tu peux <strong>cliquer sur les blocs pour personnaliser les classes appliquées par défaut</strong> puis tu as juste à télécharger le code source obtenu.</p>
+      <p>Dans ton dossier <i>.zip</i> tu trouveras l'ensemble des fichiers nécessaires&nbsp;: HTML et CSS, ainsi que le fichier CSS du micro-framework <a href="http://knacss.com/">KNACSS</a> pour parfaire ton projet.</p>
 
       <div class="mygrid mtl">
         <a class="template-item gabarit" href="#">
