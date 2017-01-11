@@ -83,16 +83,25 @@ footer {
   text-align: center;
 }
 
-.visually-hidden { 
-  position: absolute; 
-  overflow: hidden; 
-  clip: rect(0 0 0 0); 
-  height: 1px; width: 1px; 
-  margin: -1px; padding: 0; border: 0; 
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
 }
 
 .schnapsum {
   background-color: $quote-background;
+}
+
+[type="button"] {
+  border: 0;
+  align-self: center;
+  margin-bottom: 0;
+  margin-left: 1rem;
+  position: relative;
+  top: 1px;
 }
 .template {
   background-color: $template-background;
@@ -173,7 +182,7 @@ footer::after {
   & .hero {
     flex: 1 1 0%;
     padding: .5rem;
-    margin: 1rem; 
+    margin: 1rem;
   }
   & [type="checkbox"] {
     margin-right: .5rem;
@@ -210,7 +219,7 @@ footer::after {
   text-decoration: none;
   transition: .15s;
   transition-property: transform;
-  
+
   &:active {
     transform: scale(.8);
   }
@@ -225,7 +234,7 @@ footer::after {
     opacity: .5;
     transition: .2s;
   }
-  
+
   &:hover::before, &:focus::before {
     top: -6px; left: -6px; bottom: -6px; right: -6px;
     border-color: $color3;
@@ -281,7 +290,7 @@ footer::after {
     margin: 0.4em 0.4em;
     padding: 0.4em;
     background-color: white;
-    
+
     &:hover{
       background-color: #EA3852;
       color: white;
@@ -337,7 +346,7 @@ footer::after {
     display: block;
     margin: 10px 0
   }
-  
+
   label {
     margin: 0.4em 0.4em;
     padding: 0.4em;
