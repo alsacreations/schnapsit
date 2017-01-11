@@ -78,7 +78,7 @@
       <p>Choisis ton gabarit en fonction de tes besoins (nombre de colonnes, hauteurs identiques, grille intégrée), puis télécharge le code source obtenu.</p>
       <p>Dans ton dossier .zip tu trouveras l'ensemble des fichiers nécessaires&nbsp;: HTML et CSS, ainsi que le fichier CSS du micro-framework <a href="http://knacss.com/">KNACSS</a> pour parfaire ton projet.</p>
 
-      <fieldset class="mygrid mtl">
+      <div class="mygrid mtl">
         <a class="template-item gabarit" href="#">
           <img alt="nope" src="assets/img/gabarit/00.png">
           <span>structure HTML seule</span>
@@ -119,7 +119,7 @@
           <span>entête, grille x6, footer</span>
           <input type="radio" name="gabarit" id="gabarit07" class="visually-hidden" value="07">
         </a>
-      </fieldset>
+      </div>
 
       <textarea spellcheck="false" rows="20" id="result" class="hero"></textarea>
 
