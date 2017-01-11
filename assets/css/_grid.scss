@@ -7,7 +7,7 @@
   & > * {
     box-sizing: border-box;
     margin-left: $gutter / 2;
-  margin-right: $gutter / 2;
+    margin-right: $gutter / 2;
     width: 100%;
     min-width: 0;
     @media (min-width: $tiny + 1) {

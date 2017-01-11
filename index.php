@@ -30,7 +30,7 @@
 
   <header>
     <h1><img src="assets/img/logo.png" alt="Schnaps.it"></h1>
-    <p class="pre-title">since 1664</p>
+    <p class="pre-title">Générateur de template HTML5 since 1664</p>
     <p>Yeuh, t'en as marre de tous ces knèkes et de leurs Lorem Ipsum en latin, gal&nbsp;?
       <br>Alors profite du Schnapsum en alsacien, le langage moderne et tendance pour créer tes faux textes et remplir tes pages de contenu. Hopla&nbsp;!</p>
   </header>
