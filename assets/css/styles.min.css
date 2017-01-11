@@ -422,6 +422,7 @@ footer::after {
 
 .mygrid {
   margin-bottom: 2rem;
+  padding: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -452,16 +453,21 @@ footer::after {
   }
 }
 
+.mygrid img {
+  margin-bottom: 1rem;
+}
+
 /* hero input */
 .hero {
   border: 0;
+  padding: .5rem;
   background: rgba(255, 255, 255, 0.3);
 }
 
 .template-item {
   position: relative;
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 2rem 1.5rem;
   margin-bottom: 1.5rem;
   background: rgba(255, 255, 255, 0.3);
   text-align: center;
@@ -532,6 +538,12 @@ footer::after {
  * Mockup place
  *
  */
+[id="result"] {
+  width: 100%;
+  font-size: 1.5rem;
+  color: #333;
+}
+
 [id="mockup-place"] {
   font-size: 1.4rem;
 }

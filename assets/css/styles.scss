@@ -185,19 +185,25 @@ footer::after {
 
 .mygrid {
   margin-bottom: $medium-value;
+  padding: 0;
   @include grid( 4, 1.5rem );
+
+  & img {
+    margin-bottom: $small-value
+  }
 }
 
 /* hero input */
 .hero {
   border: 0;
+  padding: .5rem;
   background: rgba(255,255,255,.3);
 }
 
 .template-item {
   position: relative;
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 2rem 1.5rem;
   margin-bottom: 1.5rem;
   background: rgba(255, 255, 255, .3);
   text-align: center;
@@ -254,6 +260,12 @@ footer::after {
  * Mockup place
  *
  */
+
+[id="result"] {
+  width: 100%;
+  font-size: 1.5rem;
+  color: $color1;
+}
 
 [id="mockup-place"] {
   font-size: 1.4rem;

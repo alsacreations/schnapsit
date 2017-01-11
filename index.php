@@ -121,6 +121,8 @@
         </a>
       </fieldset>
 
+      <textarea spellcheck="false" rows="20" id="result" class="hero"></textarea>
+
       <div id="mockup-place" class="mbm">
         <!-- code mockup ici -->
       </div>

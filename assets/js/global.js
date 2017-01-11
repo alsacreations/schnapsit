@@ -41,9 +41,9 @@ $(document).ready(function(){
     e.stopPropagation();
   });
 
-   /*-----------------------------------------------------------------------------*\
-    *                               Choix du gabarit                              *
-   \*-----------------------------------------------------------------------------*/
+  /*-----------------------------------------------------------------------------*\
+   *                               Choix du gabarit                              *
+  \*-----------------------------------------------------------------------------*/
 
    gabarits.each(function(){
 
@@ -75,7 +75,7 @@ $(document).ready(function(){
        * Si gabarit différent du "sans gabarit"
        */
 
-      if( gabarit_input_val && gabarit_input_val != 'gabarit0' ) {
+      if( gabarit_input_val && gabarit_input_val != '00' ) {
 
         $('.ifMockup').show();
         $('textarea').hide();
@@ -197,8 +197,18 @@ $(document).ready(function(){
        }
 
       // Si gabarit "sans gabarit"
-      if(gabarit_input_val == 'gabarit0') {
+      if(gabarit_input_val == '00') {
         mockup_place.empty();
+
+        $.post('html.php',
+        {
+          compression: false,
+          googleAnalytics : $('#ga').prop('checked'),
+          datas : $('#schnapsit').serialize()
+        },
+        function(data,status){
+          $('#result').show().val(data);
+        });
 
         inputs.each(function(){ 
           $(this).on('change', function(e){
@@ -212,7 +222,7 @@ $(document).ready(function(){
 
   /*-----------------------------------------------------------------------------*\
    *                Téléchargement du code généré et des fichiers                *
-   \*-----------------------------------------------------------------------------*/
+  \*-----------------------------------------------------------------------------*/
 
    $('#download a').on('click',function(e) {
 
@@ -239,41 +249,39 @@ $(document).ready(function(){
      * HTML cleanup
      */
 
-     codehtml.find( '*' ).each(function(e) {
+    codehtml.find( '*' ).each(function(e) {
 
-       that = $(this);
-       that.removeProp('style').removeAttr('style').removeClass('edit picked');
+      that = $(this);
+      that.removeProp('style').removeAttr('style').removeClass('edit picked');
 
-       $.each(attr_cleanup.id, function(index, val) {
+      $.each(attr_cleanup.id, function(index, val) {
         if( that.attr( 'id' ) === index ) {
-         that.attr( 'id', val );
-       }
-     });
+          that.attr( 'id', val );
+        }
+      });
 
-       $.each(attr_cleanup.class, function(index, val) {
+     $.each(attr_cleanup.class, function(index, val) {
         if( that.hasClass( index ) ) {
          that.addClass( val );
          that.removeClass( index );
        }
      });
 
-     });
+    });
 
-     codehtml = codehtml.contents().unwrap().html();
+    codehtml = codehtml.contents().unwrap().html();
 
-     $.post( 'html.php',
-     {
+    $.post( 'html.php',
+    {
       compression     : true,
       googleAnalytics : $('#ga').prop('checked'),
       codehtml        : codehtml,
       datas           : $('#schnapsit').serialize()
     }, function(dossier) {
-     document.location.href='download.php?gab='+dossier;
-   },
-   'text'
+        document.location.href='download.php?gab='+dossier;
+      }, 'text'
    );
-
      return false;
-   });
+  });
 
- });
+});
