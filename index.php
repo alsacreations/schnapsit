@@ -37,9 +37,9 @@
 
   <section class="schnapsum">
     <input type="radio" name="tabs" id="tab1" checked>
-    <label for="tab1" class="button">version mélanchée</label>
+    <label for="tab1" class="button" tabindex="0">version mélanchée</label>
     <input type="radio" name="tabs" id="tab2">
-    <label for="tab2" class="button">version paragraphe</label>
+    <label for="tab2" class="button" tabindex="0">version paragraphe</label>
     <input class="button js-audio" type="button" value="version audio">
     <audio id="tts1" src="assets/audio/schnapsum.mp3"></audio>
 
