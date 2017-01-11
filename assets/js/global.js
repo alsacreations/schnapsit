@@ -5,6 +5,7 @@ $(document).ready(function(){
   var inputs          = $( '#schnapsit input, #schnapsit select' );
   var mockup_place    = $( '[id="mockup-place"]' );
   var custom_choices  = $( '.choices' );
+  var audioplaying    = false;
 
   /*-----------------------------------------------------------------------------*\
    *                  On cache les éléments au chargement de la page             *
@@ -17,6 +18,27 @@ $(document).ready(function(){
    */
 
    gabarit_default.prop('checked', true);
+
+   /*-----------------------------------------------------------------------------*\
+    *                              Audio                                           *
+   \*-----------------------------------------------------------------------------*/
+
+   $('#tts1').on('ended', function() {
+     $('.js-audio').val('version audio');
+     audioplaying = false;
+   });
+   $('.js-audio').on('click', function(e) {
+     if(audioplaying) {
+       $(this).val('version audio');
+       $('#tts1').get(0).pause();
+       $('#tts1').get(0).currentTime = 0;
+       audioplaying = false;
+     } else {
+       $(this).val('stop');
+       $('#tts1').get(0).play();
+       audioplaying = true;
+     }
+   });
 
   /*-----------------------------------------------------------------------------*\
    *                              Hijack link click                              *
@@ -65,7 +87,7 @@ $(document).ready(function(){
       gabarits.removeClass('gabaritselected');
       $(this).addClass('gabaritselected');
 
-      /* 
+      /*
        * Check selected radio
        */
 
@@ -177,14 +199,14 @@ $(document).ready(function(){
                 });
               });
 
-              // Gérer la suppression 
+              // Gérer la suppression
               custom_choices.find( '.suppression' ).on('click', function(e){
                 $( '.mockup-body' ).find( '.picked' ).remove();
                 custom_choices.hide();
                 return false;
               });
 
-                // Quitter 
+                // Quitter
                 custom_choices.find('.quit').on('click', function(e){
                   $( '.picked' ).removeClass( 'picked' );
                   custom_choices.hide();
@@ -210,7 +232,7 @@ $(document).ready(function(){
           $('#result').show().val(data);
         });
 
-        inputs.each(function(){ 
+        inputs.each(function(){
           $(this).on('change', function(e){
             return false;
           });
@@ -227,7 +249,7 @@ $(document).ready(function(){
    $('#download a').on('click',function(e) {
 
     /*
-     * Get mockup HTML 
+     * Get mockup HTML
      */
 
      var codehtml = mockup_place.clone();

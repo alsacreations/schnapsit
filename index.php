@@ -40,6 +40,8 @@
     <label for="tab1" class="button">version mélanchée</label>
     <input type="radio" name="tabs" id="tab2">
     <label for="tab2" class="button">version paragraphe</label>
+    <input class="button js-audio" type="button" value="version audio">
+    <audio id="tts1" src="assets/audio/schnapsum.mp3"></audio>
 
     <div class="quotes">
       <blockquote class="quote" id="quote1">Lorem Elsass Ipsum mitt picon bière munster du ftomi! Ponchour bisame. Bibbeleskaas jetz rossbolla sech choucroute un schwanz geburtstàg, Chinette dû, ìch bier deppfele schiesser. Flammekueche de knèkes Seppele gal! a hopla geburtstàg, alles fraü Chulia Roberts oder knäckes dûû blottkopf. Noch bredele schissabibala, yeuh e schmutz. E gewurtztraminer doch Carola schneck, schmutz a riesling de chambon eme rucksack Roger dû hopla geiss, jetz Chorchette de Scharrarbergheim. Kouglopf ech ìch wurscht gueut mitt schneck jetz a schiss mannele, knèkes saucisse de Niederhausbergen of fill mauls schéni fleischwurcht schnaps de eme gal nüdle blottkopf, de Chulien Roger hop pfourtz! bett mer ech schpeck un salami schmutz. Gal!</blockquote>
