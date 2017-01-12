@@ -134,7 +134,7 @@
         <li>une structure de base HTML5 propre</li>
         <li>une <a href="http://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html">meta "viewport"</a> pour le Responsive Webdesign</li>
         <li>la feuille de styles CSS du framework <a href="http://knacss.com/">KNACSS</a></li>
-        <li>un fichier <a href="http://editorconfig.org/">.editorconfig</a> pour favoriser les conventions du projet</li>
+        <li>un fichier <a href="http://editorconfig.org/">.editorconfig</a> pour favoriser les <a href="https://github.com/alsacreations/guidelines">conventions</a> du projet</li>
         <li>du lorem ipsum alsacien ♥</li>
       </ul>
     </section>
