@@ -179,11 +179,10 @@ footer::after {
       & label {
         min-width: 8em;
       }
-      &:nth-child(3) label {
-        min-width: 8em;
-      }
     }
-
+    &:nth-child(3) label {
+      min-width: 8em;
+    }
   }
   & .hero {
     flex: 1 1 0%;
