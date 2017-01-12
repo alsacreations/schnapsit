@@ -85,7 +85,7 @@ ob_start(); ?>
   if(isset($_POST["compression"]) && $_POST["compression"]=="true") {
     $file_html   = ob_get_contents();
     ob_end_clean();
-    $file_knacss = file_get_contents("https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/knacss-unminified.css");
+    $file_knacss = @file_get_contents("https://raw.githubusercontent.com/alsacreations/KNACSS/master/css/knacss-unminified.css");
 
     // Création des dossiers
     $dossier = 'tmp'.uniqid();
@@ -94,15 +94,17 @@ ob_start(); ?>
     mkdir("archive/download/".$dossier."/css");
     mkdir("archive/download/".$dossier."/img");
 
-    // Création des fichiers
+    // Création du fichier HTML
     $f = fopen("archive/download/".$dossier."/index.html", "x+");
-    $k = fopen("archive/download/".$dossier."/css/knacss.css", "x+");
-    // Ecriture
     fputs($f, $file_html);
-    fputs($k, $file_knacss);
-    // Fermeture
     fclose($f);
-    fclose($k);
+
+    // Si Knacss a pu être récupéré
+    if( false !== $file_knacss ) {
+      $k = fopen("archive/download/".$dossier."/css/knacss.css", "x+");
+      fputs($k, $file_knacss);
+      fclose($k);
+    }
 
     // Zip avec tous les $file_* (éventuellement dans des dossiers)
     // On instancie la classe.
@@ -122,7 +124,11 @@ ob_start(); ?>
           $zip->addEmptyDir("js");
           $zip->addEmptyDir("img");
           $zip->addFile("archive/download/".$dossier."/index.html", "index.html");
-          $zip->addFile("archive/download/".$dossier."/css/knacss.css", "css/knacss.css");
+
+          if( false !== $file_knacss ) {
+            $zip->addFile("archive/download/".$dossier."/css/knacss.css", "css/knacss.css");
+          }
+
           $zip->addFile("archive/css/styles.css", "css/styles.css");
           $zip->addFile("archive/.editorconfig", ".editorconfig" );
         }

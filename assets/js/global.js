@@ -293,16 +293,13 @@ $(document).ready(function(){
 
     codehtml = codehtml.contents().unwrap().html();
 
-    $.post( 'html.php',
-    {
-      compression     : true,
-      googleAnalytics : $('#ga').prop('checked'),
-      codehtml        : codehtml,
-      datas           : $('#schnapsit').serialize()
-    }, function(dossier) {
-        document.location.href='download.php?gab='+dossier;
-      }, 'text'
-   );
+    $.post( 'html.php', { compression : true, googleAnalytics : $('#ga').prop('checked'), codehtml : codehtml, datas : $('#schnapsit').serialize() })
+      .done(function(dossier) {
+        document.location.href='download.php?gab='+dossier; })
+      .fail(function(){
+        console.log('test');
+      });
+
      return false;
   });
 
