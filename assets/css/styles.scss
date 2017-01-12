@@ -176,6 +176,12 @@ footer::after {
     align-items: center;
     &:nth-child(2) {
       justify-content: center;
+      & label {
+        min-width: 8em;
+      }
+      &:nth-child(3) label {
+        min-width: 8em;
+      }
     }
 
   }
@@ -186,6 +192,7 @@ footer::after {
   }
   & [type="checkbox"] {
     margin-right: .5rem;
+    min-width: 1em;
   }
   & label {
     margin-top: 0;

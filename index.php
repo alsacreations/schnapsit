@@ -76,7 +76,7 @@
       </div>
 
       <img class="fr" alt="la réflexion c'est maintenant" src="assets/img/cerveau.png">
-      <h2>Ton template HTML maintenant ? Hopla !</h2>
+      <h2>Ton template HTML maintenant&nbsp;? Hopla&nbsp;!</h2>
       <p>Choisis ton gabarit en fonction de tes besoins (nombre de colonnes, hauteurs identiques, grille intégrée), ensuite tu peux <strong>cliquer sur les blocs pour personnaliser les classes appliquées par défaut</strong> puis tu as juste à télécharger le code source obtenu.</p>
       <p>Dans ton dossier <i>.zip</i> tu trouveras l'ensemble des fichiers nécessaires&nbsp;: HTML et CSS, ainsi que le fichier CSS du micro-framework <a href="http://knacss.com/">KNACSS</a> pour parfaire ton projet.</p>
 
@@ -129,7 +129,7 @@
         <!-- code mockup ici -->
       </div>
 
-      <h2>Y'a quoi dans mon template ?</h2>
+      <h2>Y'a quoi dans mon template&nbsp;?</h2>
       <ul>
         <li>une structure de base HTML5 propre</li>
         <li>une <a href="http://www.alsacreations.com/article/lire/1490-comprendre-le-viewport-dans-le-web-mobile.html">meta "viewport"</a> pour le Responsive Webdesign</li>
@@ -141,13 +141,14 @@
   </form>
 
   <section id="download" class="txtcenter">
+    <h2>Télécharcher</h2>
     <a href="#" title="Télécharger le code">
-      <svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg><span class="mls visually-hidden"> icon-download</span>
+      <svg class="icon icon-download"><use xlink:href="#icon-download"></use></svg>
     </a>
   </section>
 
   <footer>
-    <h2>Yeuh, mais c'est quoi le secret ?</h2>
+    <h2>Yeuh, mais c'est quoi le secret&nbsp;?</h2>
     <p>Schnaps.it est un outil permettant de générer la structure de base d'une page HTML en un clic, réalisé par l'agence web <a href="http://www.alsacreations.fr">Alsacréations</a>.
       <br>En plus d'offrir des modèles HTML de base, Schnaps.it inclut les classes CSS du framework <a href="http://knacss.com/">KNACSS</a> offrant une personnalisation aisée de ta page.
       <br>Les textes par défaut sont remplis avec l'algorithme savant <i>Schnapsum®</i>, le lorem ipsum alsacien.</p>
