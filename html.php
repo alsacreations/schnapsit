@@ -124,6 +124,7 @@ ob_start(); ?>
           $zip->addFile("archive/download/".$dossier."/index.html", "index.html");
           $zip->addFile("archive/download/".$dossier."/css/knacss.css", "css/knacss.css");
           $zip->addFile("archive/css/styles.css", "css/styles.css");
+          $zip->addFile("archive/.editorconfig", ".editorconfig" );
         }
 
         // On ferme l’archive.
