@@ -172,7 +172,7 @@ footer::after {
   }
   & > * {
     display: flex;
-    flex: 1 1 0%;
+    flex: 1 1 auto;
     align-items: center;
     &:nth-child(2) {
       justify-content: center;
