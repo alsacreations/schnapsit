@@ -222,13 +222,7 @@ $(document).ready(function(){
       if(gabarit_input_val == '00') {
         mockup_place.empty();
 
-        $.post('html.php',
-        {
-          compression: false,
-          googleAnalytics : $('#ga').prop('checked'),
-          datas : $('#schnapsit').serialize()
-        },
-        function(data,status){
+        $.post('html.php', { compression: false, googleAnalytics : $('#ga').prop('checked'), datas : $('#schnapsit').serialize() }, function(data,status){
           $('#result').show().val(data);
         });
 
