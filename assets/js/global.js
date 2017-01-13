@@ -291,7 +291,7 @@ $(document).ready(function(){
       .done(function(dossier) {
         document.location.href='download.php?gab='+dossier; })
       .fail(function(){
-        console.log('test');
+        console.warn('Le fichier CSS de Knacss n\'a pas pu être récupéré.');
       });
 
      return false;
