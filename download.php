@@ -29,7 +29,7 @@ if(file_exists($filename)) {
 }
 
 // Nettoyage des fichiers zip précédents
-$zips = glob('./archive/download/*'.zip);
+$zips = glob('./archive/download/*.zip');
 foreach($zips as $zip) {
   unlink('./archive/download/'.$zip);
 }
