@@ -1,0 +1,66 @@
+/* Reset basique */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  font-size: calc(1em * 0.625);
+}
+
+body {
+  margin: 0;
+  font-size: 1.4rem;
+  background-color: #fff;
+  color: #212529;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+video,
+svg {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+}
+
+/* Décoration optionnelle (juste pour la démo) */
+
+ul {
+  background: #bbb;
+}
+li, 
+[class*="grid"] > * {
+  background: #ccc;
+}
+header, footer {
+  background: #ddd;
+}
+main {
+  background: #eee;
+}
+aside {
+  background: #aaa;
+}
+
+/* Vos styles ici */
