@@ -54,10 +54,6 @@ ob_start(); ?>
       echo "\n" . "    " . $_POST['codehtml'];
     }
 
-    if( isset( $userChoice['jquery'] ) && $userChoice['jquery'] == 'on' ) {
-      echo "\n" . "    " . '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>';
-    }
-
     if( isset( $userChoice['ga'] ) && $userChoice['ga'] == 'on' ) {
 
       if( isset($userChoice['ua']) && empty( $userChoice['ua'] ) ) {
