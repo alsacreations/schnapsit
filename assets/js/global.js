@@ -6,16 +6,20 @@ audioButton.addEventListener('click', () => {
     // Si c'est en pause on play
     audio.play()
     audioButton.classList.toggle('js-playing')
+    audioButton.value = 'stop'
   } else {
     // Si ça play on pause et retourne début
     audio.pause()
     audio.currentTime = 0
     audioButton.classList.toggle('js-playing')
+    audioButton.value = 'version audio'
   }
 })
 // Quand l'audio finit naturellement, on supprime la classe
 audio.addEventListener('ended', () => {
   audioButton.classList.remove('js-playing')
+  audioButton.value = ''
+  audioButton.value = 'version audio'
 })
 
 
