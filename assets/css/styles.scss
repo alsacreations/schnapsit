@@ -234,12 +234,11 @@ footer::after {
     opacity: .5;
     transition: .2s;
   }
-
-  &:hover::before, &:focus::before, &:focus-within::before {
+}
+input:checked + .template-item::before {
     top: -6px; left: -6px; bottom: -6px; right: -6px;
     border-color: $color3;
   }
-}
 .template-item span {
   display: block;
   font-size: .8em;
