@@ -94,8 +94,12 @@ ul {
   background: #bbb;
   padding: 1rem;
 }
-li{
+li {
   background: #ccc;
+}
+article {
+  background: #888;
+  padding: 1rem;
 }
 [class*="grid"] > * {
   background: #ccc;

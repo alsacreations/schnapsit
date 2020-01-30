@@ -235,7 +235,7 @@ footer::after {
     transition: .2s;
   }
 
-  &:hover::before, &:focus::before {
+  &:hover::before, &:focus::before, &:focus-within::before {
     top: -6px; left: -6px; bottom: -6px; right: -6px;
     border-color: $color3;
   }
