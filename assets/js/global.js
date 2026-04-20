@@ -36,13 +36,13 @@ function getRandomInt(max) {
 function buildSchnapsumParagraph(density) {
   const phrases = [
     "Lorem Salu bissame ! Wie geht's les samis ? Hans apporte moi une Wurschtsalad avec un picon bitte, s'il te plaît.",
-    "Yoo ch ch'ai ramené du schpeck, du chambon, un kuglopf et du schnaps dans mon rucksack.",
+    "Yoo dû ch'ai ramené du schpeck, du chambon, un kuglopf et du schnaps dans mon rucksack.",
     "Wotch a kofee avec ton bibalaekaess et ta wurscht ? Yeuh non che suis au régime, je ne mange plus que des Grumbeere light.",
     "Chulien a glissé dans la choucroute, alors on va boire un verre de gewurtztraminer.",
-    "Une Carola et du Melfor ? Yo dî, espèce de Knäckes, ch'ai dit un picon !",
+    "Une Carola et du Melfor ? Yo dû, espèce de Knäckes, ch'ai dit un picon !",
     "Ponchour bisame, bibbeleskaas et un rossbolla pour accompagner la flammekueche.",
-    "Kouglopf, schnaps, nüdle, et un peu de rucksack, voilà le vrai menu alsacien.",
-    "Bande de knäckes ! Ch'est l'heure du schnapsum et du gal pour faire la fête.",
+    "Kouglopf, wurscht, nüdle, et un schnaps pour dichérer, voilà le vrai menu alsacien.",
+    "Bande de knäckes ! C'est l'heure du schnapsum gal pour faire la fête.",
     "Mon rottznoz est sur le comptoir et le chambon attend le petit déjeuner.",
   ];
 
