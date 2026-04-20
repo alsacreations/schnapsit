@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -19,7 +19,7 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/knacss.css" />
-    <link rel="stylesheet" href="assets/css/styles.min.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
 
   <body>
@@ -55,7 +55,7 @@
       <input type="radio" name="tabs" id="tab1" checked />
       <label for="tab1" class="button" tabindex="0">version mélanchée</label>
       <input type="radio" name="tabs" id="tab2" />
-      <label for="tab2" class="button" tabindex="0">version paragraphe</label>
+      <label for="tab2" class="button" tabindex="0">version HTML</label>
 
       <label for="tts1" class="button" tabindex="0">
         <input
@@ -66,6 +66,21 @@
         />
       </label>
       <audio id="tts1" src="assets/audio/schnapsum.mp3"></audio>
+
+      <div class="html-options">
+        <label>
+          Nombre de paragraphes <output id="paragraphCountOutput">2</output>
+          <input id="paragraphCount" type="range" min="1" max="10" value="2" />
+        </label>
+        <label>
+          Densité <output id="paragraphDensityOutput">3</output>
+          <input id="paragraphDensity" type="range" min="1" max="5" value="3" />
+        </label>
+      </div>
+
+      <button id="copyHtmlButton" type="button" class="button button--copy">
+        Copier
+      </button>
 
       <div class="quotes">
         <blockquote class="quote" id="quote1">
@@ -87,174 +102,6 @@
         </blockquote>
       </div>
     </section>
-
-    <!-- <form enctype="multipart/form-data" id="schnapsit">
-      <section class="template">
-        <img
-          class="fr"
-          alt="la réflexion c'est maintenant"
-          src="assets/img/cerveau.png"
-        />
-        <h2>Ton template HTML prêt à l'emploi&nbsp;? Hopla&nbsp;!</h2>
-        <p>
-          Choisis ton gabarit en fonction de tes besoins (nombre de zones, de
-          colonnes, grille intégrée). Ton voeux est exaucé et ton template
-          s'affiche devant tes yeux ébahis. Affiche ce dont tu as besoin (HTML,
-          CSS ou résultat visuel), puis tu n'as plus qu'à
-          <strong>récupérer le code source</strong> du template choisi. Tu peux
-          même le modifier en direct si ça te fait plaisir&nbsp;!
-        </p>
-
-        <div class="mygrid mtl">
-          <input
-            type="radio"
-            name="gabarit"
-            id="gabarit00"
-            class="visually-hidden"
-            value="dyPEKpy"
-            checked
-          />
-          <label for="gabarit00" class="template-item gabarit">
-            <img alt="nope" src="assets/img/gabarit/00.png" />
-            <span>structure HTML seule</span>
-          </label>
-          <input
-            type="radio"
-            name="gabarit"
-            id="gabarit01"
-            class="visually-hidden"
-            value="dyPrWON"
-          />
-          <label for="gabarit01" class="template-item gabarit">
-            <img alt="gabarit 1" src="assets/img/gabarit/01.png" />
-            <span>une seule colonne, entête, contenu</span>
-          </label>
-          <input
-            type="radio"
-            name="gabarit"
-            id="gabarit02"
-            class="visually-hidden"
-            value="ZEYPOgv"
-          />
-          <label for="gabarit02" class="template-item gabarit">
-            <img alt="gabarit 2" src="assets/img/gabarit/02.png" />
-            <span>sidebar, contenu fluide</span>
-          </label>
-          <input
-            type="radio"
-            name="gabarit"
-            id="gabarit03"
-            class="visually-hidden"
-            value="povYYKE"
-          />
-          <label for="gabarit03" class="template-item gabarit">
-            <img alt="gabarit 3" src="assets/img/gabarit/03.png" />
-            <span>entête, sidebar, contenu fluide</span>
-          </label>
-          <input
-            type="radio"
-            name="gabarit"
-            id="gabarit04"
-            class="visually-hidden"
-            value="oNgVVyM"
-          />
-          <label for="gabarit04" class="template-item gabarit">
-            <img alt="gabarit 4" src="assets/img/gabarit/04.png" />
-            <span>entête, sidebar, contenu fluide, footer</span>
-          </label>
-          <input
-            type="radio"
-            name="gabarit"
-            id="gabarit05"
-            class="visually-hidden"
-            value="yLywwqV"
-          />
-          <label for="gabarit05" class="template-item gabarit">
-            <img alt="gabarit 5" src="assets/img/gabarit/05.png" />
-            <span>entête, double sidebar, contenu fluide, footer</span>
-          </label>
-          <input
-            type="radio"
-            name="gabarit"
-            id="gabarit06"
-            class="visually-hidden"
-            value="qBEvvMK"
-          />
-          <label for="gabarit06" class="template-item gabarit">
-            <img alt="gabarit 6" src="assets/img/gabarit/06.png" />
-            <span>entête, grille x3, footer</span>
-          </label>
-          <input
-            type="radio"
-            name="gabarit"
-            id="gabarit07"
-            class="visually-hidden"
-            value="Jjozzmv"
-          />
-          <label for="gabarit07" class="template-item gabarit">
-            <img alt="gabarit 7" src="assets/img/gabarit/07.png" />
-            <span>entête, grille x6, footer</span>
-          </label>
-          <input
-            type="radio"
-            name="gabarit"
-            id="gabarit08"
-            class="visually-hidden"
-            value="LYEaZMX"
-          />
-          <label for="gabarit08" class="template-item gabarit">
-            <img alt="gabarit 8" src="assets/img/gabarit/08.png" />
-            <span>entête et footer "Hero"</span>
-          </label>
-          <input
-            type="radio"
-            name="gabarit"
-            id="gabarit09"
-            class="visually-hidden"
-            value="QWwRXaP"
-          />
-          <label for="gabarit09" class="template-item gabarit">
-            <img alt="gabarit 9" src="assets/img/gabarit/09.png" />
-            <span>composition originale 1</span>
-          </label>
-        </div>
-
-        <p
-          class="codepen"
-          data-height="540"
-          data-theme-id="6218"
-          data-default-tab="html,result"
-          data-user="alsacreations"
-          data-slug-hash="dyPEKpy"
-          style="
-            height: 540px;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid;
-            margin: 1em 0;
-            padding: 1em;
-          "
-          data-pen-title="Gabarit 00"
-        >
-          <span
-            >See the Pen
-            <a href="https://codepen.io/alsacreations/pen/dyPEKpy">
-              Gabarit 00</a
-            >
-            by Alsacreations (<a href="https://codepen.io/alsacreations"
-              >@alsacreations</a
-            >) on <a href="https://codepen.io">CodePen</a>.</span
-          >
-        </p>
-        <script
-          async
-          src="https://static.codepen.io/assets/embed/ei.js"
-        ></script>
-      </section>
-    </form> -->
-
     <section id="download" style="text-align: center">
       <h2 class="mtl">Aller encore plus loin&nbsp;?</h2>
 
