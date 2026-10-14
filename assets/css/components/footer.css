@@ -26,11 +26,15 @@
     outline-color: var(--accent-2);
   }
 
-  .footer-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-xs) var(--spacing-l);
-    padding: 0;
-    list-style: none;
+  a.btn {
+    --button-text-color: var(--base);
+    --button-border-color: var(--base);
+
+    color: var(--button-text-color);
+
+    &:hover {
+      --button-background-color: var(--base);
+      --button-text-color: var(--contrast);
+    }
   }
 }

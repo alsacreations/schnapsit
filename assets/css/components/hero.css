@@ -30,6 +30,7 @@
     flex-direction: column;
     gap: var(--spacing-l);
     min-width: 0;
+    container-type: inline-size;
   }
 
   .hero-badge {
@@ -44,7 +45,8 @@
   }
 
   .hero-title {
-    font-size: var(--text-3xl);
+    /* Taille calée sur la largeur de la colonne pour tenir sur 2 lignes */
+    font-size: clamp(2rem, 8.4cqi, 5rem);
     font-weight: var(--font-weight-extrabold);
     letter-spacing: -0.035em;
     line-height: 1;
