@@ -8,7 +8,7 @@ Schnapsum est un outil en ligne qui te propose le _Schnapsum®_, un générateur
 
 ## Fonctionnalités
 
-- **Quantité** : en paragraphes, en phrases ou en mots.
+- **Quantité** : en paragraphes ou en mots.
 - **Dose d’alsacien** : de « Un doigt » (surtout du latin) à « Cul sec » (100 % alsacien).
 - **Options** : commencer par « Lorem Elsass ipsum », ajouter un intertitre et une liste.
 - **Copie** en texte brut ou en HTML, **lecture à voix haute** (synthèse vocale du navigateur).

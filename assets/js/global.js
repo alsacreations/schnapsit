@@ -23,9 +23,9 @@ const LATIN = [
 ]
 
 const DOSES = ['Un doigt', 'Petit verre', 'Bien servi', 'Corsé', 'Cul sec']
-const MAX = { p: 20, s: 50, w: 500 }
-const DEFAULT_COUNT = { p: 3, s: 5, w: 50 }
-const UNIT_LABEL = { p: 'paragraphes', s: 'phrases', w: 'mots' }
+const MAX = { p: 20, w: 500 }
+const DEFAULT_COUNT = { p: 3, w: 50 }
+const UNIT_LABEL = { p: 'paragraphes', w: 'mots' }
 
 /** Générateur pseudo-aléatoire reproductible (mulberry32) */
 function random(seed) {
@@ -65,8 +65,6 @@ export function generate({ seed, density, unit, count, start, rich }) {
   const blocks = []
   if (unit === 'p') {
     for (let i = 0; i < count; i++) blocks.push({ type: 'p', text: paragraph(3 + Math.floor(r() * 4)) })
-  } else if (unit === 's') {
-    blocks.push({ type: 'p', text: paragraph(count) })
   } else {
     const w = words(count)
     const parts = []
