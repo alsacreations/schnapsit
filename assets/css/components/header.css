@@ -1,0 +1,50 @@
+@scope (.header) {
+  :scope {
+    border-block-end: 1px solid var(--border-light);
+  }
+
+  .header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-m) var(--spacing-xl);
+    padding-block: var(--spacing-m);
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--contrast);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-extrabold);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+
+  .logo-accent {
+    color: var(--accent-1);
+  }
+
+  .navigation ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem var(--spacing-l);
+    padding: 0;
+    list-style: none;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .navigation a {
+    color: var(--contrast);
+  }
+}
+
+/* Couleurs des SVG (logo et vague) */
+.fill-gold { fill: var(--accent-2); }
+.fill-red { fill: var(--accent-1); }
+.fill-coral { fill: var(--accent-3); }
+.fill-base { fill: var(--base-2); }
+.stroke-ink { stroke: var(--contrast); }

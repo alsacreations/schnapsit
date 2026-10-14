@@ -1,0 +1,16 @@
+/* Point d’entrée : ordre des couches puis imports (guidelines Kiwipedia) */
+@layer config, base, components, utilities;
+
+@import url("reset.css") layer(config);
+@import url("theme.css") layer(config);
+@import url("styles.css") layer(base);
+
+@import url("components/buttons.css") layer(components);
+@import url("components/header.css") layer(components);
+@import url("components/hero.css") layer(components);
+@import url("components/generator.css") layer(components);
+@import url("components/glossary.css") layer(components);
+@import url("components/tools.css") layer(components);
+@import url("components/footer.css") layer(components);
+
+@import url("utilities.css") layer(utilities);

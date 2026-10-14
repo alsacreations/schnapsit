@@ -1,0 +1,108 @@
+@scope (.hero) {
+  :scope {
+    position: relative;
+    overflow: hidden;
+    min-height: 50vw;
+  }
+
+  .wave {
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-end: -1px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1440 / 720;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+    padding-block: clamp(3rem, 8vw, 6.5rem) clamp(8.5rem, 17vw, 15rem);
+  }
+
+  .hero-content {
+    display: flex;
+    flex: 999 1 30rem;
+    flex-direction: column;
+    gap: var(--spacing-l);
+    min-width: 0;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--radius-full);
+    background-color: var(--accent-2);
+    color: var(--color-ink-800);
+    font-size: var(--text-s);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .hero-title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-extrabold);
+    letter-spacing: -0.035em;
+    line-height: 1;
+  }
+
+  .hero-accent {
+    color: var(--accent-1);
+  }
+
+  .hero-lead {
+    max-width: 36rem;
+    color: var(--contrast-muted);
+    font-size: var(--text-xl);
+
+    & strong {
+      color: var(--contrast);
+    }
+  }
+
+  .float-zone {
+    flex: 1 1 18rem;
+    align-self: stretch;
+    min-height: clamp(6rem, 18vw, 16rem);
+  }
+
+  /* Poire flottante : tangage au défilement, balancement au survol */
+  .float-sway,
+  .float-bob {
+    transform-box: fill-box;
+    transform-origin: 50% 88%;
+  }
+
+  @supports (animation-timeline: scroll()) {
+    .float-sway {
+      animation: float-sway linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 100vh;
+    }
+  }
+
+  &:has(.float-zone:hover) .float-bob {
+    animation: float-bob 2.4s ease-in-out 2;
+  }
+}
+
+@keyframes float-sway {
+  0% { transform: none; }
+  14% { transform: translateY(-6px) rotate(4deg); }
+  30% { transform: translateY(3px) rotate(-3deg); }
+  48% { transform: translateY(-4px) rotate(3deg); }
+  66% { transform: translateY(2px) rotate(-2.5deg); }
+  84% { transform: translateY(-2px) rotate(1.5deg); }
+  100% { transform: none; }
+}
+
+@keyframes float-bob {
+  0%, 100% { transform: none; }
+  25% { transform: translateY(-5px) rotate(3deg); }
+  50% { transform: translateY(1px) rotate(-0.5deg); }
+  75% { transform: translateY(3px) rotate(-3deg); }
+}

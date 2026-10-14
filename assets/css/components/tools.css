@@ -1,0 +1,35 @@
+@scope (.tools) {
+  :scope {
+    background-color: var(--base-2);
+  }
+
+  .tools-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+    gap: var(--spacing-m);
+    padding: 0;
+    list-style: none;
+
+    & > li {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+      padding: var(--spacing-l);
+      border: 2px solid var(--border-light);
+      border-radius: var(--radius-20);
+      background-color: var(--base);
+    }
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  h3 a {
+    color: var(--contrast);
+  }
+
+  p {
+    color: var(--contrast-muted);
+  }
+}

@@ -1,0 +1,98 @@
+/* Polices auto-hébergées (variable, plage de graisses) */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src:
+    url("../fonts/bricolage-grotesque-variable.woff2") format("woff2") tech("variations"),
+    url("../fonts/bricolage-grotesque-variable.woff2") format("woff2-variations");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light dark;
+
+  /* Primitives */
+  --color-white: #ffffff;
+  --color-ink-900: #141416;
+  --color-ink-800: #1a1a1f;
+  --color-ink-700: #1e1e22;
+  --color-ink-600: #2c2c31;
+  --color-stone-100: #f4f2ef;
+  --color-stone-200: #e4e1dc;
+  --color-stone-500: #8a857d;
+  --color-stone-600: #77746e;
+  --color-grey-400: #aba8a2;
+  --color-grey-600: #55555f;
+  --color-cream-100: #f2f0ec;
+  --color-red-600: #b3261e;
+  --color-red-800: #7f1b15;
+  --color-red-300: #ff8a7a;
+  --color-red-200: #ffc2b8;
+  --color-gold-400: #f6c445;
+  --color-gold-500: #e9b93a;
+  --color-coral-300: #eaa595;
+  --color-coral-800: #7a3a30;
+  --color-green-700: #1e6b3a;
+  --color-green-300: #7fd69b;
+
+  --font-bricolage: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-system: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --text-s: 0.875rem;
+  --text-m: 1rem;
+  --text-l: 1.125rem;
+  --text-xl: clamp(1.1rem, 1rem + 0.5vw, 1.3rem);
+  --text-2xl: clamp(2rem, 1.4rem + 2.5vw, 3rem);
+  --text-3xl: clamp(2.6rem, 1.5rem + 4.5vw, 5rem);
+
+  --line-height-s: 1.1;
+  --line-height-m: 1.6;
+
+  --spacing-xs: 0.5rem;
+  --spacing-s: 0.75rem;
+  --spacing-m: 1rem;
+  --spacing-l: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-section: clamp(3rem, 2rem + 4vw, 5.5rem);
+  --spacing-gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+
+  --radius-8: 0.5rem;
+  --radius-12: 0.75rem;
+  --radius-20: 1.25rem;
+  --radius-full: 999px;
+
+  --z-skip-link: 10;
+
+  /* Tokens sémantiques */
+  --base: light-dark(var(--color-white), var(--color-ink-900));
+  --base-2: light-dark(var(--color-stone-100), var(--color-ink-700));
+  --contrast: light-dark(var(--color-ink-800), var(--color-cream-100));
+  --contrast-muted: light-dark(var(--color-grey-600), var(--color-grey-400));
+  --accent-1: light-dark(var(--color-red-600), var(--color-red-300));
+  --accent-2: light-dark(var(--color-gold-400), var(--color-gold-500));
+  --accent-3: light-dark(var(--color-coral-300), var(--color-coral-800));
+  --link: var(--accent-1);
+  --link-hover: light-dark(var(--color-red-800), var(--color-red-200));
+  --border-light: light-dark(var(--color-stone-200), var(--color-ink-600));
+  --border-medium: light-dark(var(--color-stone-500), var(--color-stone-600));
+  --success: light-dark(var(--color-green-700), var(--color-green-300));
+  --code-background: var(--color-ink-800);
+  --code-text: #ece9e4;
+  --font-display: var(--font-bricolage);
+  --font-body: var(--font-system);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}

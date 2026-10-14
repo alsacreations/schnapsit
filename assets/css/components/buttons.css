@@ -1,0 +1,64 @@
+@scope (.btn) {
+  :scope {
+    --button-background-color: transparent;
+    --button-text-color: var(--contrast);
+    --button-border-color: var(--contrast);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    min-height: 2.75rem;
+    padding: var(--spacing-xs) 1.1rem;
+    border: 2px solid var(--button-border-color);
+    border-radius: var(--radius-full);
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+
+    &:hover,
+    &[aria-pressed="true"] {
+      --button-background-color: var(--contrast);
+      --button-text-color: var(--base);
+    }
+
+    &.btn-primary {
+      --button-background-color: var(--accent-1);
+      --button-border-color: var(--accent-1);
+      --button-text-color: light-dark(var(--color-white), var(--color-ink-900));
+
+      &:hover {
+        --button-background-color: oklch(from var(--accent-1) calc(l * 0.85) c h);
+        --button-border-color: oklch(from var(--accent-1) calc(l * 0.85) c h);
+      }
+    }
+  }
+}
+
+@scope (.icon-btn) {
+  :scope {
+    display: inline-grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-12);
+    background-color: var(--base);
+    color: var(--contrast);
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--contrast);
+    }
+  }
+}
+
+@media (forced-colors: active) {
+  .btn,
+  .icon-btn {
+    border-color: ButtonText;
+  }
+}

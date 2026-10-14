@@ -1,0 +1,36 @@
+@scope (.footer) {
+  :scope {
+    background-color: var(--contrast);
+    color: var(--base);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-l);
+    padding-block: 2.5rem;
+  }
+
+  a {
+    color: var(--base);
+
+    &:hover {
+      color: var(--base);
+      text-decoration-thickness: 2px;
+    }
+  }
+
+  :focus-visible {
+    outline-color: var(--accent-2);
+  }
+
+  .footer-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs) var(--spacing-l);
+    padding: 0;
+    list-style: none;
+  }
+}
