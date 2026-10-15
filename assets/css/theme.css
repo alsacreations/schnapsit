@@ -8,7 +8,7 @@
 }
 
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
 
   /* Primitives */
   --color-white: #ffffff;
@@ -69,28 +69,20 @@
   --z-skip-link: 10;
 
   /* Tokens sémantiques */
-  --base: light-dark(var(--color-white), var(--color-ink-900));
-  --base-2: light-dark(var(--color-stone-100), var(--color-ink-700));
-  --contrast: light-dark(var(--color-ink-800), var(--color-cream-100));
-  --contrast-muted: light-dark(var(--color-grey-600), var(--color-grey-400));
-  --accent-1: light-dark(var(--color-red-600), var(--color-red-300));
-  --accent-2: light-dark(var(--color-gold-400), var(--color-gold-500));
-  --accent-3: light-dark(var(--color-coral-300), var(--color-coral-800));
+  --base: var(--color-white);
+  --base-2: var(--color-stone-100);
+  --contrast: var(--color-ink-800);
+  --contrast-muted: var(--color-grey-600);
+  --accent-1: var(--color-red-600);
+  --accent-2: var(--color-gold-400);
+  --accent-3: var(--color-coral-300);
   --link: var(--accent-1);
-  --link-hover: light-dark(var(--color-red-800), var(--color-red-200));
-  --border-light: light-dark(var(--color-stone-200), var(--color-ink-600));
-  --border-medium: light-dark(var(--color-stone-500), var(--color-stone-600));
-  --success: light-dark(var(--color-green-700), var(--color-green-300));
+  --link-hover: var(--color-red-800);
+  --border-light: var(--color-stone-200);
+  --border-medium: var(--color-stone-500);
+  --success: var(--color-green-700);
   --code-background: var(--color-ink-800);
   --code-text: #ece9e4;
   --font-display: var(--font-chelsea);
   --font-body: var(--font-system);
-}
-
-:root[data-theme="light"] {
-  color-scheme: light;
-}
-
-:root[data-theme="dark"] {
-  color-scheme: dark;
 }

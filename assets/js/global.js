@@ -139,31 +139,6 @@ export function toHtml(blocks) {
 
 /* ---------- Interface ---------- */
 
-function initTheme() {
-  const button = document.querySelector('.js-theme-toggle')
-  if (!button) return
-  const root = document.documentElement
-  let saved = null
-  try {
-    saved = localStorage.getItem('schnapsum-theme')
-  } catch {}
-  const current = () =>
-    root.dataset.theme ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-  const apply = (theme) => {
-    root.dataset.theme = theme
-    button.setAttribute('aria-pressed', String(theme === 'dark'))
-  }
-  if (saved) apply(saved)
-  else button.setAttribute('aria-pressed', String(current() === 'dark'))
-  button.addEventListener('click', () => {
-    const next = current() === 'dark' ? 'light' : 'dark'
-    apply(next)
-    try {
-      localStorage.setItem('schnapsum-theme', next)
-    } catch {}
-  })
-}
-
 function initGenerator() {
   const form = document.querySelector('.js-settings')
   if (!form) return
@@ -340,5 +315,4 @@ function initGenerator() {
   render()
 }
 
-initTheme()
 initGenerator()

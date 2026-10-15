@@ -111,8 +111,7 @@ a {
 
 .no-js .js-settings,
 .no-js .output-actions,
-.no-js .view-toggle,
-.no-js .js-theme-toggle {
+.no-js .view-toggle {
   display: none;
 }
 

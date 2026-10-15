@@ -28,7 +28,7 @@
     &.btn-primary {
       --button-background-color: var(--accent-1);
       --button-border-color: var(--accent-1);
-      --button-text-color: light-dark(var(--color-white), var(--color-ink-900));
+      --button-text-color: var(--color-white);
 
       &:hover {
         --button-background-color: oklch(from var(--accent-1) calc(l * 0.85) c h);
