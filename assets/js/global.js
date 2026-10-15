@@ -301,6 +301,20 @@ function initGenerator() {
     speakButton.setAttribute('aria-pressed', String(speaking))
     speakLabel.textContent = speaking ? 'Arrêter la lecture' : 'Écouter'
   }
+  // Aucune synthèse vocale ne parle vraiment alsacien : on cherche la voix
+  // la plus proche disponible (alsacien, puis suisse alémanique, puis allemand)
+  const VOICE_LANGS = ['gsw', 'de-ch', 'de-at', 'de-de', 'de']
+  const pickVoice = () => {
+    const voices = speechSynthesis.getVoices()
+    for (const lang of VOICE_LANGS) {
+      const matches = voices.filter((v) => v.lang.toLowerCase().replace('_', '-').startsWith(lang))
+      if (matches.length) return matches.find((v) => v.localService) ?? matches[0]
+    }
+    return null
+  }
+  // Les voix se chargent de façon asynchrone dans certains navigateurs
+  if ('speechSynthesis' in window) speechSynthesis.getVoices()
+
   speakButton.addEventListener('click', () => {
     if (!('speechSynthesis' in window)) {
       flash('La lecture à voix haute n’est pas disponible dans ce navigateur.')
@@ -312,7 +326,9 @@ function initGenerator() {
       return
     }
     const utterance = new SpeechSynthesisUtterance(toText(blocks))
-    utterance.lang = 'fr-FR'
+    const voice = pickVoice()
+    utterance.lang = voice?.lang ?? 'de-DE'
+    if (voice) utterance.voice = voice
     utterance.rate = 0.95
     utterance.addEventListener('end', () => setSpeaking(false))
     utterance.addEventListener('error', () => setSpeaking(false))
