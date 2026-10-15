@@ -1,10 +1,8 @@
-/* Polices auto-hébergées (variable, plage de graisses) */
+/* Police auto-hébergée (graisse unique, déclarée sur toute la plage pour éviter le faux gras) */
 @font-face {
-  font-family: "Bricolage Grotesque";
-  src:
-    url("../fonts/bricolage-grotesque-variable.woff2") format("woff2") tech("variations"),
-    url("../fonts/bricolage-grotesque-variable.woff2") format("woff2-variations");
-  font-weight: 200 800;
+  font-family: "Chelsea Market";
+  src: url("../fonts/chelsea-market-latin-400-normal.woff2") format("woff2");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -36,7 +34,7 @@
   --color-green-700: #1e6b3a;
   --color-green-300: #7fd69b;
 
-  --font-bricolage: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-chelsea: "Chelsea Market", system-ui, sans-serif;
   --font-system: system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
 
@@ -85,7 +83,7 @@
   --success: light-dark(var(--color-green-700), var(--color-green-300));
   --code-background: var(--color-ink-800);
   --code-text: #ece9e4;
-  --font-display: var(--font-bricolage);
+  --font-display: var(--font-chelsea);
   --font-body: var(--font-system);
 }
 

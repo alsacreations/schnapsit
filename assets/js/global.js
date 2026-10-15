@@ -9,8 +9,8 @@ const NBSP = ' ' // espace insécable
 const ALSACIEN = [
   'hopla', 'bredele', 'choucroute', 'knack', 'flammekueche', 'kougelhopf', 'munster', 'bretzel',
   'picon', 'gewurztraminer', 'riesling', 'sylvaner', 'schnaps', 'winstub', 'Elsass', 'Strossburi',
-  'baeckeoffe', 'mannele', 'spätzle', 'pinot gris', 'cigogne', 'colombage', 'Colmar', 'Sélestat',
-  'Obernai', 'Haguenau', 'Saverne', 'Christkindelsmärik', 'tarte flambée', 'crémant', 'quetsche',
+  'baeckeoffe', 'mannele', 'spätzle', 'pinot gris', 'cigogne', 'colombage', 'Breuschwickersheim',
+  'Krautergersheim', 'Schwindratzheim', 'Ichtratzheim', 'Christkindelsmärik', 'tarte flambée', 'crémant', 'quetsche',
   'mirabelle', 'wurscht', 'hopla geiss', 'Petite France', 'kirsch', 'lewerknepfle', 'fleischschnacka',
   'bissame', 'schpeck', 'chambon', 'rucksack', 'bibbeleskaas', 'rossbolla', 'grumbeere', 'knäckes', 'nüdle',
 ]

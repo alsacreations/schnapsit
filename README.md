@@ -29,7 +29,7 @@ assets/
     utilities.css
     components/        un fichier par composant, isolé avec @scope
   js/global.js         générateur, copie, lecture à voix haute, thème
-  fonts/               Bricolage Grotesque variable (woff2, auto-hébergée)
+  fonts/               Chelsea Market (woff2, auto-hébergée, via Fontsource)
 ```
 
 Le code suit les [guidelines Kiwipedia](https://kiwipedia.fr) d’Alsacréations (HTML, CSS, accessibilité).
