@@ -13,6 +13,13 @@ const ALSACIEN = [
   'Krautergersheim', 'Schwindratzheim', 'Ichtratzheim', 'Christkindelsmärik', 'tarte flambée', 'crémant', 'quetsche',
   'mirabelle', 'wurscht', 'hopla geiss', 'Petite France', 'kirsch', 'lewerknepfle', 'fleischschnacka',
   'bissame', 'schpeck', 'chambon', 'rucksack', 'bibbeleskaas', 'rossbolla', 'grumbeere', 'knäckes', 'nüdle',
+  'schiffala', 'presskopf', 'knepfle', 'fleischkiechle', 'bierewecke', 'spritzbredele', 'schwowebredele',
+  'dampfnüdle', 'grumbeerekiechle', 'linzertorte', 'lammele', 'zewelekueche', 'bettelman', 'schäufele',
+  'pâté en croûte', 'pain d’épices', 'streusel', 'edelzwicker', 'muscat', 'klevener', 'auxerrois',
+  'pinot noir', 'route des vins', 'gell', 'jo', 'nix', 'ebbes', 'schmutz', 'schnoke', 'schlappe', 'maidle',
+  'schätzele', 'a güeter', 'putzlumpe', 'storich', 'Hans im Schnokeloch', 'Elsässerditsch', 'Riquewihr',
+  'Kaysersberg', 'Eguisheim', 'Obernai', 'Haut-Koenigsbourg', 'Mont Sainte-Odile', 'Krutenau', 'Robertsau',
+  'Kammerzell', 'Wolfisheim', 'Geispolsheim', 'Mittelbergheim', 'Ottrott',
 ]
 
 const LATIN = [
@@ -20,6 +27,8 @@ const LATIN = [
   'eiusmod', 'tempor', 'incididunt', 'ut', 'labore', 'et', 'dolore', 'magna', 'aliqua', 'enim', 'ad',
   'minim', 'veniam', 'quis', 'nostrud', 'ullamco', 'laboris', 'nisi', 'aliquip', 'ex', 'ea', 'commodo',
   'consequat', 'duis', 'aute', 'irure', 'in', 'voluptate', 'velit', 'esse', 'fugiat', 'nulla', 'pariatur',
+  'reprehenderit', 'cillum', 'eu', 'exercitation', 'excepteur', 'sint', 'occaecat', 'cupidatat', 'non',
+  'proident', 'sunt', 'culpa', 'qui', 'officia', 'deserunt', 'mollit', 'anim', 'id', 'est', 'laborum',
 ]
 
 const DOSES = ['Un doigt', 'Petit verre', 'Bien servi', 'Corsé', 'Cul sec']
@@ -42,8 +51,35 @@ function random(seed) {
 export function generate({ seed, density, unit, count, start, rich }) {
   const r = random(seed)
   const dose = [0.25, 0.45, 0.6, 0.8, 1][density - 1] ?? 0.6
-  const pick = (list) => list[Math.floor(r() * list.length)]
-  const word = () => (r() < dose ? pick(ALSACIEN) : pick(LATIN))
+  // Sac mélangé : chaque mot sort une fois avant que la liste soit reprise,
+  // et les derniers tirés ne peuvent pas ressortir juste après le remélange
+  const bag = (list) => {
+    const gap = Math.floor(list.length / 3)
+    let pool = []
+    let recent = []
+    return () => {
+      if (!pool.length) {
+        pool = [...list]
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(r() * (i + 1))
+          ;[pool[i], pool[j]] = [pool[j], pool[i]]
+        }
+        // Les prochains tirés sont en fin de tableau (pop)
+        for (let i = pool.length - gap; i < pool.length; i++) {
+          if (recent.includes(pool[i])) {
+            const j = Math.floor(r() * (pool.length - gap))
+            ;[pool[i], pool[j]] = [pool[j], pool[i]]
+          }
+        }
+      }
+      const w = pool.pop()
+      recent = [...recent, w].slice(-gap)
+      return w
+    }
+  }
+  const pickAlsacien = bag(ALSACIEN)
+  const pickLatin = bag(LATIN)
+  const word = () => (r() < dose ? pickAlsacien() : pickLatin())
   const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1)
   const words = (n) => Array.from({ length: n }, word)
   const end = () => {
